@@ -1,0 +1,82 @@
+#Nav {
+  position: sticky;
+  inset: 0;
+  height: var(--navigation-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 var(--margin);
+  z-index: 1;
+}
+@keyframes page-animate {
+  from{
+    translate: 100% 0;
+  }
+  to{
+    trabslate: 0;
+  }
+}
+
+.user-skills > ol {
+  list-style: none;
+}
+
+.user-skills > ol > li {
+  text-transform: uppercase;
+  font-size: var(--fs-compact);
+  letter-spacing: 0.75em;
+}
+
+.nav-link-opener {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: var(--fw-medium);
+}
+
+.circular-text {
+  --letter-height: 15vmax;
+  position: absolute;
+  height: var(--letter-height);
+  width: var(--letter-height);
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+  font-size: var(--fs-small);
+  transform-origin: center center;
+  animation: circulating-text 5s linear forwards infinite;
+  z-index: -1;
+  transition: 1s ease;
+}
+
+.circular-text-letter {
+  position: absolute;
+  height: calc(var(--letter-height) / 2);
+  transform-origin: bottom center;
+  color: var(--ternary-clr);
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-compact); 
+}
+
+@keyframes circulating-text {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
+  }
+}
+
+.center-link {
+  text-transform: uppercase;
+  font-size: var(--fs-compact);
+  z-index: 1000;
+  padding: 2em 0;
+  cursor: pointer;
+}
+
+
+.center-link:hover + .circular-text{
+  animation-duration: 2s;
+}

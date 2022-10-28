@@ -1,0 +1,52 @@
+:root {
+  --font-family: "Montserrat", sans-serif;
+
+  --margin: 50px;
+
+  --fs-small: 10px;
+  --fs-compact: 0.8vmax;
+  --fs-regular: 1.1vmax;
+  --fs-medium: 1.75vmax;
+  --fs-big: 2.4vmax;
+  --fs-large: 3.15vmax;
+  --fs-title: 4.2vmax;
+  --fs-hero-title: 10vmax;
+
+  --fw-light: 300;
+  --fw-normal: 400;
+  --fw-medium: 600;
+  --fw-bold: 900;
+
+  --primary-clr: #e2e2e5;
+  --secondary-clr: #1b1b1b;
+  --ternary-clr: #868687;
+  --quaternary-clr: #ffffff;
+
+  --navigation-height: 15vh;
+}
+
+
+@media screen and (max-width: 858px) {
+    :root{
+      --margin: 25px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    :root{
+      --margin: 25px;
+
+    }
+}
+
+@media screen and (max-width: 425px) {
+    :root{
+      --margin: 10px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    :root{
+      --margin: 10px;
+    }
+}

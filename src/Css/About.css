@@ -1,0 +1,89 @@
+#About,
+#Skill {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2.5rem 0;
+  padding: 0 var(--margin);
+}
+
+#Skill {
+  padding-top: 7vmax;
+}
+
+#About > .description,
+#Skill > .description {
+  grid-column: 1 / 4;
+  font-size: var(--fs-medium);
+  font-weight: var(--fw-regular);
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.bold-description {
+  font-size: var(--fs-medium);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.about-image {
+  position: relative;
+  display: inline-block;
+  grid-column: 4 / -1;
+  height: fit-content;
+  width: 100%;
+  box-shadow: 1em 1em 0 0 var(--quaternary-clr);
+  animation: animate-entry-about-image 0.25s ease-in forwards,
+    animate-about-image 5s ease-in-out alternate infinite;
+}
+
+@keyframes animate-about-image {
+  from {
+    translate: 2em;
+  }
+  to {
+    translate: 0;
+  }
+}
+
+@keyframes animate-entry-about-image {
+  from {
+    translate: 100vw;
+  }
+  to {
+    translate: 0;
+  }
+}
+
+.resume {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  padding: 0.5em 1em;
+  background-color: var(--secondary-clr);
+  color: var(--quaternary-clr);
+  width: fit-content;
+  font-size: var(--fs-big);
+  font-weight: var(--fw-medium);
+  text-decoration: none;
+  text-transform: uppercase;
+  box-shadow: 1em 1em 0 0 var(--quaternary-clr);
+  transition: 0.5s ease-in-out;
+}
+
+.resume:hover {
+  box-shadow: 0.5em 0.5em 0 0 var(--quaternary-clr);
+  animation: jiggle 0.25s ease-in-out;
+}
+
+.resume > svg {
+  height: 2em;
+  width: 2em;
+}
+
+.resume > svg > path {
+  stroke: white;
+}

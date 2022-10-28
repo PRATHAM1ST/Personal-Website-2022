@@ -1,0 +1,23 @@
+* {
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+  color: var(--secondary-clr);
+/* border: 1px solid red; */
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--primary-clr);
+  padding-bottom: var(--margin);
+}
+
+::-webkit-scrollbar{
+  width: 1px;
+  display: none;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: var(--secondary-clr);
+  border-radius: 100rem;  
+}

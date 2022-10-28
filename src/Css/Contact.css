@@ -1,0 +1,52 @@
+#Contact {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  translate: 0 -8%;
+  /* grid-template-rows: repeat(3, 1fr); */
+  gap: 2.5rem;
+  padding: 0 var(--margin);
+}
+
+#Contact > .description {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.description > div {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+
+.description > div > label {
+  font-size: var(--fs-compact);
+  text-transform: uppercase;
+  font-size: var(--fs-compact);
+  letter-spacing: 0.75em;
+}
+.description > div > a:hover {
+  text-shadow: 0.15em 0.15em 0 var(--quaternary-clr);
+  animation: jiggle 0.25s ease-in-out;
+}
+
+.description > div > a {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-decoration: none;
+  font-size: var(--fs-big);
+  font-weight: 800;
+  gap: 1em;
+  width: fit-content;
+}
+
+.description > div > a > svg {
+  height: 1em !important;
+  width: fit-content;
+}
+
+.description > div > a > svg > path {
+  stroke: var(--secondary-clr) !important;
+}
