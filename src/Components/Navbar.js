@@ -20,9 +20,9 @@ export default function Navbar() {
   const handleClick = () =>{
     setOpenNavPanel(!openNavPanel)
     if (openNavPanel) {
-      setStyleAnimation("nav-page-animate-end 0.25s linear forwards");
-    } else {
       setStyleAnimation("nav-page-animate-entry 0.25s linear forwards");
+    } else {
+      setStyleAnimation("nav-page-animate-end 0.25s linear forwards");
     }
   }
 
