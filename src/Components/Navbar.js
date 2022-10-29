@@ -87,7 +87,7 @@ export default function Navbar() {
                 <span
                   key={element.angle}
                   className="circular-text-letter"
-                  style={{ rotate: `${element.angle}deg` }}
+                  style={{ transform: `rotate(${element.angle})deg` }}
                 >
                   {element.letter}
                 </span>

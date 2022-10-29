@@ -99,11 +99,11 @@
 
 @keyframes animate-hero-middle {
   from {
-    scale: 1;
+    transform: scale(1);
     object-position: 0% 70%;
   }
   to {
-    scale: 1.1;
+    transform: scale(1.1);
     object-position: 70%;
   }
 }
