@@ -6,7 +6,7 @@
 /* border: 1px solid red; */
 }
 
-body {
+body, html {
   width: 100vw;
   overflow-x: hidden;
   background-color: var(--primary-clr);
