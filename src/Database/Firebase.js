@@ -1,7 +1,18 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { collection, getDocs, getFirestore, query, orderBy } from "firebase/firestore";
+import {
+  getAuth,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { getAnalytics, logEvent } from "firebase/analytics";
+import {
+  collection,
+  getDocs,
+  getFirestore,
+  query,
+  orderBy,
+} from "firebase/firestore";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -26,14 +37,49 @@ const analytics = getAnalytics(app);
 // Initialize Cloud Firestore and get a reference to the service
 const db = getFirestore(app);
 
+const auth = getAuth();
+
 export async function getWork() {
   const workQuery = query(collection(db, "Work"), orderBy("order", "desc"));
   const querySnapshot = await getDocs(workQuery);
-  let dataArray = []
+  let dataArray = [];
   querySnapshot.forEach((doc) => {
-    let data = doc.data()
-    data.id = doc.id
+    let data = doc.data();
+    data.id = doc.id;
     dataArray.push(data);
   });
   return dataArray;
+}
+
+export function clickedMenuHome() {
+  console.log(1);
+  logEvent(analytics, "menu_home_link").then((e) => {
+    console.log(e);
+  });
+}
+
+export async function checkAdmin() {
+  return await onAuthStateChanged(auth, (user) => {
+    if (user) {
+      const uid = user.uid;
+      return uid
+    } else {
+      console.log("Hello motherfucker");
+    }
+  });
+}
+
+export async function signin(email, password) {
+  return await signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed in
+      const user = userCredential.user;
+      console.log("authenticated", user);
+      // ...
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      throw (errorCode, errorMessage);
+    });
 }

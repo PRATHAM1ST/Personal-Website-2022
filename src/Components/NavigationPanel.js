@@ -1,4 +1,5 @@
 import "../Css/NavigationPanel.css";
+import { clickedMenuHome } from "../Database/Firebase";
 
 export default function NavigationPanel({style}) {
   const pages = ["", "work", "about", "contact"];
@@ -11,7 +12,7 @@ export default function NavigationPanel({style}) {
             if (page !== window.location.pathname.substring(1)) {
               if (page === "") {
                 return (
-                  <a href="/" key={page} className="pageLink">
+                  <a href="/" key={page} className="pageLink" onClick={()=>console.log(1)}>
                     home
                   </a>
                 );

@@ -7,6 +7,7 @@ import Home from "./Pages/Home";
 import Work from "./Pages/Work";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
+import Admin from "./Pages/Admin";
 // Css
 import "./Css/Global.css";
 import "./Css/Root.css";
@@ -20,6 +21,8 @@ function App() {
         <Route path="/work" element={<Work />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="*" element={<Home />} />
       </Routes>
     </div>
   );

@@ -1,0 +1,145 @@
+#Admin {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+  padding: 0 var(--margin);
+}
+
+.admin-login {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.inputfield {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputfield > label {
+  font-size: var(--fs-small);
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+}
+
+.inputfield > input {
+  font-size: var(--regular);
+  padding: 0.25em;
+  border: 1px solid var(--secondary-clr);
+}
+
+.admin-login > button {
+  cursor: pointer;
+  font-size: var(--regular);
+  font-weight: var(--fw-medium);
+  background: var(--secondary-clr);
+  color: var(--primary-clr);
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  padding: 0.5em 0.25em;
+  border: 1px solid var(--secondary-clr);
+}
+
+.stats{
+  padding: 1em;
+  margin-bottom: 2em;
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  justify-content: space-around;
+}
+
+.stat-card{
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 1em 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.stat-title{
+  font-size: var(--fs-regular);
+  font-weight: var(--fw-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+}
+
+.stat-number{
+  font-size: var(--fs-title);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+}
+
+.cards,
+.card {
+    position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10vh;
+}
+
+.card {
+  gap: 1em;
+  padding-bottom: 2em;
+  box-shadow: 1px 2px 0 -1px black;
+  height: 0;
+  overflow: hidden;
+  transition: 1s ease-in-out;
+  max-width: calc(100vw - var(--margin)*2);
+}
+
+.card:hover, .card:focus{
+    height: 100%;
+}
+
+.card-title {
+  font-size: var(--regular);
+  font-weight: var(--fw-normal);
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+}
+
+.colour-properties {
+  display: flex;
+  gap: 1em;
+}
+
+.font {
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="color"]::before {
+  content: attr(title);
+}
+
+input[type="color"]::after {
+  content: attr(value);
+}
+
+input[type="color"] {
+  position: relative;
+  border: none;
+  height: 10vw;
+  width: 10vw;
+  padding: 0;
+  outline: none;
+  background: none;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+input[type="text"] {
+  padding: 1em;
+  width: fit-content;
+  border: 1px solid var(--secondary-clr);
+}
