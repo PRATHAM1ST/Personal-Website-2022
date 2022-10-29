@@ -13,24 +13,24 @@
   z-index: 1;
   place-items: center;
   transform-origin: center;
-  translate: 100%;
+  transform: translate(100%);
 }
 
 @keyframes nav-page-animate-entry {
   from {
-    translate: 100vw;
+    transform: translate(100vw);
   }
   to {
-    translate: 0;
+    transform: translate(0, 0);
   }
 }
 
 @keyframes nav-page-animate-end {
   from {
-    translate: 0;
+    transform: translate(0);
   }
   to {
-    translate: 100vw;
+    transform: translate(100vw);
   }
 }
 

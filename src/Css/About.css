@@ -41,19 +41,19 @@
 
 @keyframes animate-about-image {
   from {
-    translate: 2em;
+    transform: translate(2em);
   }
   to {
-    translate: 0;
+    transform: translate(0);
   }
 }
 
 @keyframes animate-entry-about-image {
   from {
-    translate: 100vw;
+    transform: translate(100vw);
   }
   to {
-    translate: 0;
+    transform: translate(0);
   }
 }
 

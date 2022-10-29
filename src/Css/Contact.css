@@ -2,8 +2,7 @@
   position: relative;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  translate: 0 -8%;
-  /* grid-template-rows: repeat(3, 1fr); */
+  transform: translate(0, -8%);
   gap: 2.5rem;
   padding: 0 var(--margin);
 }

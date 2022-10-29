@@ -1,6 +1,6 @@
 #Home {
   position: relative;
-  translate: 0 -8%;
+  transform: translate(0, -8%);
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 2rem;
@@ -65,11 +65,11 @@
 
 @keyframes animate-hero-start {
   from {
-    translate: 0 0;
+    transform: translate(0, 0);
     object-position: 50% 70%;
   }
   to {
-    translate: 0 10%;
+    transform: translate(0, 10%);
     object-position: 50% 100%;
   }
 }
@@ -110,10 +110,10 @@
 
 @keyframes animate-entry-hero-middle {
   from{
-    translate: 0 100vh;
+    transform: translate(0, 100vh);
   }
   to{
-    translate: 0;
+    transform: translate(0);
   }
 }
 
@@ -134,11 +134,11 @@
 
 @keyframes animate-hero-end {
   from {
-    translate: 0 0;
+    transform: translate(0);
     object-position: 50% 70%;
   }
   to {
-    translate: -5% 0;
+    transform: translate(-5%, 0);
     object-position: 50% 80%;
   }
 }
@@ -215,7 +215,7 @@
 
 @media screen and (max-width: 500px) {
   #Home {
-    translate: 0 -5%;
+    transform: translate(0, -5%);
     gap: 2.5rem 0;
   }
 
@@ -225,13 +225,13 @@
 
   .hero-start {
     grid-column: 3/-1;
-    translate: 0 30%;
+    transform: translate(0, 30%);
     height: 35vh;
     margin-top: 3em;
   }
   .hero-middle {
     grid-column: 4/-1;
-    translate: 50% -40%;
+    transform: translate(50%, -40%);
     height: 30vh;
     margin-top: 1em;
   }
