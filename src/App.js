@@ -6,10 +6,10 @@ import Navbar from "./Components/Navbar";
 import Home from "./Pages/Home";
 import Work from "./Pages/Work";
 import About from "./Pages/About";
+import Contact from "./Pages/Contact";
 // Css
 import "./Css/Global.css";
 import "./Css/Root.css";
-import Contact from "./Pages/Contact";
 
 function App() {
   return (

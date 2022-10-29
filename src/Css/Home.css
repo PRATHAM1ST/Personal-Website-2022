@@ -209,6 +209,10 @@
 }
 
 @media screen and (max-width: 768px) {
+  #Home {
+    padding-top: calc(var(--navigation-height) / 1.5);
+    gap: 0;
+  }
   .hero-middle {
     height: 45vh;
   }
@@ -216,8 +220,8 @@
 
 @media screen and (max-width: 500px) {
   #Home {
-    transform: translate(0, -5%);
-    gap: 2.5rem 0;
+    padding-top: calc(var(--navigation-height) / 1.5);
+    gap: 0;
   }
 
   #Home > .description {

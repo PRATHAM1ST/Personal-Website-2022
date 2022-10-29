@@ -32,6 +32,7 @@
   text-decoration: none;
   text-transform: uppercase;
   gap: 0.5em;
+  text-size-adjust: none;
 }
 
 .project-title > svg,
@@ -83,4 +84,10 @@
 .project-tecs {
   font-size: var(--fs-regular);
   color: var(--ternary-clr);
+}
+
+@media screen and (max-width: 858px) {
+  #Work {
+    transform: translate(0);
+  }
 }
