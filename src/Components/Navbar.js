@@ -18,11 +18,14 @@ export default function Navbar() {
   }
 
   const handleClick = () =>{
-    setOpenNavPanel(!openNavPanel)
-    if (openNavPanel) {
-      setStyleAnimation("nav-page-animate-end 0.25s linear forwards");
+    if (!openNavPanel) {
+      setStyleAnimation("nav-page-animate-entry 0.25s ease-in forwards");
+      setOpenNavPanel(true)
     } else {
-      setStyleAnimation("nav-page-animate-entry 0.25s linear forwards");
+      setStyleAnimation("nav-page-animate-end 0.25s ease-out forwards");
+      setTimeout(()=>{
+        setOpenNavPanel(false)
+      }, 500);
     }
   }
 
@@ -32,7 +35,7 @@ export default function Navbar() {
 
   return (
     <>
-      <NavigationPanel style={styleAnimation} />
+      {openNavPanel && <NavigationPanel style={styleAnimation} />}
       <div id="Nav">
         <div className="user-skills">
           <ol>

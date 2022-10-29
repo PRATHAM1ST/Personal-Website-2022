@@ -19,15 +19,15 @@
 
 @keyframes animate-name {
   from {
-    translate: -30%;
+    translate: 0;
     text-shadow: -0.1em 0.1em var(--quaternary-clr);
   }
   50% {
-    translate: 0;
+    translate: calc(100vw - var(--margin) * 2 - 100%);
     text-shadow: 0.1em 0.1em var(--quaternary-clr);
   }
   to {
-    translate: -30%;
+    translate: 0;
     text-shadow: -0.1em 0.1em var(--quaternary-clr);
   }
 }
