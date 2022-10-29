@@ -1,5 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import { getStorage, ref } from "firebase/storage";
 import {
   getAuth,
   onAuthStateChanged,
@@ -12,6 +13,8 @@ import {
   getFirestore,
   query,
   orderBy,
+  getDoc,
+  doc,
 } from "firebase/firestore";
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -38,6 +41,9 @@ const analytics = getAnalytics(app);
 const db = getFirestore(app);
 
 const auth = getAuth();
+const storage = getStorage(app);
+
+
 
 export async function getWork() {
   const workQuery = query(collection(db, "Work"), orderBy("order", "desc"));
@@ -62,7 +68,7 @@ export async function checkAdmin() {
   return await onAuthStateChanged(auth, (user) => {
     if (user) {
       const uid = user.uid;
-      return uid
+      return uid;
     } else {
       console.log("Hello motherfucker");
     }
@@ -82,4 +88,15 @@ export async function signin(email, password) {
       const errorMessage = error.message;
       throw (errorCode, errorMessage);
     });
+}
+
+export async function getHomeMedia() {
+  let mediaArr = await (await getDoc(doc(db, "Home", "Images"))).data();
+  mediaArr.Videos = await(await getDoc(doc(db, "Home", "Videos"))).data().Videos;
+  return mediaArr
+}
+
+export async function getAboutMedia() {
+  let mediaArr = await (await getDoc(doc(db, "About", "Image"))).data();
+  return mediaArr
 }

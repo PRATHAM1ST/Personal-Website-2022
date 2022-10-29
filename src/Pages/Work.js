@@ -10,10 +10,9 @@ export default function Work() {
 
   useEffect(() => {
     document.title = "W O R K";
-    async function fetchingProjects() {
+    (async ()=>{
       setProjects(await getWork());
-    }
-    fetchingProjects();
+    })();
   }, []);
 
   return (

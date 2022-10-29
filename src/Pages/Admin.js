@@ -39,6 +39,11 @@ export default function Admin() {
               <div className="stat-number">{1000}</div>
             </div>
           </div>
+          <div className="media">
+            <div className="page-media">
+              
+            </div>
+          </div>
           <div className="cards">
 
             <div className="card">

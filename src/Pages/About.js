@@ -5,9 +5,11 @@ import "../Css/About.css";
 import { ReactComponent as Link } from "../Assets/SVG/link.svg";
 import { ReactComponent as Arrow } from "../Assets/SVG/arrow.svg";
 
-import me from "../Assets/Images/smiling-center.jpg";
+import { useAboutMedia } from "../Database/Database";
 
 export default function About() {
+  const image = useAboutMedia();
+
   useEffect(() => {
     document.title = "A B O U T";
   }, []);
@@ -45,7 +47,15 @@ export default function About() {
           </div>
           <p>This inspires me to do work with all hearts and keep on going.</p>
         </div>
-        <img className="about-image" src={me} alt="Smiling" />
+        {image ? (
+          <img
+            className="about-image"
+            src={image.src}
+            alt={image.description}
+          />
+        ) : (
+          ""
+        )}
       </div>
 
       <div id="Skill">
