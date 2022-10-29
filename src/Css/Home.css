@@ -19,15 +19,15 @@
 
 @keyframes animate-name {
   from {
-    translate: 0;
+    transform: translate(0);
     text-shadow: -0.1em 0.1em var(--quaternary-clr);
   }
   50% {
-    translate: calc(100vw - var(--margin) * 2 - 100%);
+    transform: translate(calc(100vw - var(--margin) * 2 - 100%));
     text-shadow: 0.1em 0.1em var(--quaternary-clr);
   }
   to {
-    translate: 0;
+    transform: translate(0);
     text-shadow: -0.1em 0.1em var(--quaternary-clr);
   }
 }
@@ -239,17 +239,5 @@
     grid-column: 1/4;
     height: 35vh;
     margin-top: 1em;
-  }
-}
-
-@media screen and (max-width: 425px) {
-  .hero-middle {
-    /* height: 45vh; */
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .hero-middle {
-    /* height: 45vh; */
   }
 }
