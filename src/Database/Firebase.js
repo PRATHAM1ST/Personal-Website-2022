@@ -1,9 +1,8 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getStorage, ref } from "firebase/storage";
+import { getStorage } from "firebase/storage";
 import {
   getAuth,
-  onAuthStateChanged,
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { getAnalytics, logEvent } from "firebase/analytics";
@@ -61,17 +60,6 @@ export function clickedMenuHome() {
   console.log(1);
   logEvent(analytics, "menu_home_link").then((e) => {
     console.log(e);
-  });
-}
-
-export async function checkAdmin() {
-  return await onAuthStateChanged(auth, (user) => {
-    if (user) {
-      const uid = user.uid;
-      return uid;
-    } else {
-      console.log("Hello motherfucker");
-    }
   });
 }
 

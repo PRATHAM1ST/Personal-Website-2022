@@ -4,7 +4,9 @@ export default function FontSize({ current, type }) {
   const [fontSize, setFontSize] = useState(current);
   const [fontView, setFontView] = useState(type);
 
-  useEffect(() => {}, [fontSize]);
+  useEffect(() => {
+      document.documentElement.style.setProperty(type, fontSize);
+  }, [fontSize]);
 
   return (
     <div className="font">

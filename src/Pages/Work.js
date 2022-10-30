@@ -6,11 +6,11 @@ import { useEffect, useState } from "react";
 import { getWork } from "../Database/Firebase";
 
 export default function Work() {
-  const [projects, setProjects] = useState([]);
+  const [projects, setProjects] = useState(null);
 
   useEffect(() => {
     document.title = "W O R K";
-    (async ()=>{
+    (async () => {
       setProjects(await getWork());
     })();
   }, []);
@@ -30,25 +30,45 @@ export default function Work() {
           </p>
         </div>
         <div className="projects">
-          {projects.map((project) => {
+          {projects ? projects.map((project) => {
             return (
               <div className="project" key={project.id}>
-                <a href={project.website} className="project-title" target="_blank" rel="noreferrer">
+                <a
+                  href={project.website}
+                  className="project-title"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   {project.title}
                   <Link />
                 </a>
-                <a href={project.github} className="project-tecs" target="_blank" rel="noreferrer">
+                <a
+                  href={project.github}
+                  className="project-tecs"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   {project.tecs.map(
                     (tec, index) =>
                       tec + (index !== project.tecs.length - 1 ? " · " : "")
                   )}
-                  {
-                    project.github ? <Github /> : ""
-                  }
+                  {project.github ? <Github /> : ""}
                 </a>
               </div>
             );
-          })}
+          }) : 
+          (
+            <>
+              <div className="project">
+                <a className="project-title loading">
+                  Loading Project Title...
+                </a>
+                <a className="project-tecs loading">
+                  Loading Tecs used...
+                </a>
+              </div>
+            </>
+          )}
         </div>
         <a className="specific-page-link" href="/about">
           <span>about</span>

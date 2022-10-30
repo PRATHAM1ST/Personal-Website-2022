@@ -54,7 +54,7 @@ export default function About() {
             alt={image.description}
           />
         ) : (
-          ""
+          <div className="about-image loading" />
         )}
       </div>
 

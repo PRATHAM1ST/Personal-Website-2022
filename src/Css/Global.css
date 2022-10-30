@@ -3,22 +3,66 @@
   margin: 0;
   padding: 0;
   color: var(--secondary-clr);
-/* border: 1px solid red; */
+  /* border: 1px solid red; */
 }
 
-body, html {
+body,
+html {
   width: 100vw;
   overflow-x: hidden;
   background-color: var(--primary-clr);
   padding-bottom: var(--margin);
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 1px;
   display: none;
 }
 
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
   background-color: var(--secondary-clr);
-  border-radius: 100rem;  
+  border-radius: 100rem;
+}
+
+.loading {
+  position: relative;
+  background-color: var(--ternary-clr);
+  height: 100%;
+  width: 100%;
+}
+
+.project > .loading {
+  height: 1em !important;
+  background-color: var(--primary-clr) !important;
+}
+
+.project > .loading::after {
+  opacity: 0.3 !important;
+}
+
+.loading::after {
+  position: absolute;
+  top: 0;
+  left: 90%;
+  content: "";
+  height: 100%;
+  width: 10%;
+  background-color: var(--primary-clr);
+  opacity: 0.1;
+  animation: loading-animation 0.8s ease-in-out infinite;
+}
+
+@keyframes loading-animation {
+  from {
+    left: -10%;
+  }
+  50% {
+    left: 100%;
+  }
+  51% {
+    left: -10%;
+  }
+  to {
+    left: 100%;
+  }
 }

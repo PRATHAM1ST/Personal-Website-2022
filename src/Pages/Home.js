@@ -35,8 +35,8 @@ export default function Home() {
               src={images[0].src}
             />
           ) : (
-            ""
-          )}
+            <div className="hero-start loading" />
+            )}
           {videos ? (
             <video
               className="hero-middle"
@@ -49,7 +49,7 @@ export default function Home() {
               muted
             />
           ) : (
-            ""
+            <div className="hero-middle loading" />
           )}
           {images ? (
             <img
@@ -58,7 +58,7 @@ export default function Home() {
               src={images[1].src}
             />
           ) : (
-            ""
+            <div className="hero-end loading" />
           )}
         </div>
         <a className="specific-page-link" href="/work">

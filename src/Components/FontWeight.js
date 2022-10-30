@@ -4,7 +4,9 @@ export default function FontWeight({ current, type }) {
   const [fontWeight, setFontWeight] = useState(current);
   const [fontView, setFontView] = useState(type);
 
-  useEffect(() => {}, [fontWeight]);
+  useEffect(() => {
+    document.documentElement.style.setProperty(type, fontWeight);
+  }, [fontWeight]);
 
   return (
     <div className="font">

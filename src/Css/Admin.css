@@ -45,7 +45,7 @@
   border: 1px solid var(--secondary-clr);
 }
 
-.stats{
+.stats {
   padding: 1em;
   margin-bottom: 2em;
   display: flex;
@@ -54,7 +54,7 @@
   justify-content: space-around;
 }
 
-.stat-card{
+.stat-card {
   border: 1px solid black;
   border-radius: 10px;
   padding: 1em 2em;
@@ -64,42 +64,89 @@
   align-items: center;
 }
 
-.stat-title{
+.stat-title {
   font-size: var(--fs-regular);
   font-weight: var(--fw-medium);
   text-transform: uppercase;
   letter-spacing: 0.5em;
 }
 
-.stat-number{
+.stat-number {
   font-size: var(--fs-title);
   font-weight: var(--fw-bold);
   text-transform: uppercase;
 }
 
+.page {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.page-media {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.image-container {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.image-container > input::after {
+  content: attr(data-name);
+}
+
+.video-container {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.admin-image {
+  width: 30vw;
+}
+
+.admin-video {
+  height: 45vh;
+}
+
 .cards,
-.card {
-    position: relative;
+.card,
+.media {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 10vh;
 }
 
-.card {
+.card,
+.page {
   gap: 1em;
   padding-bottom: 2em;
   box-shadow: 1px 2px 0 -1px black;
   height: 0;
   overflow: hidden;
   transition: 1s ease-in-out;
-  max-width: calc(100vw - var(--margin)*2);
+  max-width: calc(100vw - var(--margin) * 2);
 }
 
-.card:hover, .card:focus{
-    height: 100%;
+.page {
+  height: 100%;
 }
 
-.card-title {
+.card:hover,
+.card:focus {
+  height: 100%;
+}
+
+.card-title,
+.page-title {
   font-size: var(--regular);
   font-weight: var(--fw-normal);
   text-transform: uppercase;
