@@ -92,6 +92,10 @@
   color: var(--ternary-clr);
 }
 
+.project-tecs > svg > g > path {
+  color: var(--ternary-clr);
+}
+
 @media screen and (max-width: 858px) {
   #Work {
     transform: translate(0);
