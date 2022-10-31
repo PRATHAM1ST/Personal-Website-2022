@@ -2,8 +2,7 @@ import "../Css/Work.css";
 import { ReactComponent as Link } from "../Assets/SVG/link.svg";
 import { ReactComponent as Github } from "../Assets/SVG/github.svg";
 import { ReactComponent as Arrow } from "../Assets/SVG/arrow.svg";
-import smilingDown from "../Assets/Images/smiling-down.jpg";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { getWork } from "../Database/Firebase";
 
 export default function Work() {
@@ -61,6 +60,7 @@ export default function Work() {
                     title={project.title}
                     className="project-snapshot"
                     src={project.snapshot}
+                    alt={project.title}
                   />
                 </div>
               );
