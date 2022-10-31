@@ -22,6 +22,12 @@
   gap: 2em;
 }
 
+.project{
+  position: relative;
+  white-space: nowrap;
+  width: min-content;
+}
+
 .project-title,
 .project-tecs {
   max-width: fit-content;
@@ -90,4 +96,22 @@
   #Work {
     transform: translate(0);
   }
+}
+
+.project-snapshot{
+  position: absolute;
+  height: 0;
+  top: 0;
+  left: 100%;
+  border: 1px solid black;
+  transform-origin: center;
+  transform: rotate(0) scale(0);
+  opacity: 0;
+  transition: 0.5s ease;
+}
+
+.project:hover > .project-snapshot{
+  transform: rotate(360deg) scale(1);
+  height: 100%;
+  opacity: 1;
 }

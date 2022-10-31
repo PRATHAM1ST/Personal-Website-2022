@@ -33,12 +33,15 @@ export default function Home() {
               className="hero-start"
               alt={images[0].description}
               src={images[0].src}
+              title={images[0].description}
+              loading="lazy"
             />
           ) : (
             <div className="hero-start loading" />
-            )}
+          )}
           {videos ? (
             <video
+              loading="lazy"
               className="hero-middle"
               alt="eating pizza"
               src={videos[currentVideoIndex]}
@@ -53,9 +56,11 @@ export default function Home() {
           )}
           {images ? (
             <img
+              loading="lazy"
               className="hero-end"
               alt={images[1].description}
               src={images[1].src}
+              title={images[1].description}
             />
           ) : (
             <div className="hero-end loading" />

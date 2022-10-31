@@ -49,7 +49,9 @@ export default function About() {
         </div>
         {image ? (
           <img
+            loading="lazy"
             className="about-image"
+            title={image.description}
             src={image.src}
             alt={image.description}
           />
@@ -62,7 +64,7 @@ export default function About() {
         <div className="title-name">Skills</div>
         <div className="description">
           <div className="bold-description">
-            HTML and CSS · Javascript · React · Firebase · Django · Python ·
+            HTML and CSS · Javascript · React · Firebase · Nodejs · Python ·
             Illustrations · UI/UX Designs · Graphic Designs ...
           </div>
           <a

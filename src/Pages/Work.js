@@ -2,7 +2,8 @@ import "../Css/Work.css";
 import { ReactComponent as Link } from "../Assets/SVG/link.svg";
 import { ReactComponent as Github } from "../Assets/SVG/github.svg";
 import { ReactComponent as Arrow } from "../Assets/SVG/arrow.svg";
-import { useEffect, useState } from "react";
+import smilingDown from "../Assets/Images/smiling-down.jpg";
+import { useEffect, useRef, useState } from "react";
 import { getWork } from "../Database/Firebase";
 
 export default function Work() {
@@ -30,42 +31,47 @@ export default function Work() {
           </p>
         </div>
         <div className="projects">
-          {projects ? projects.map((project) => {
-            return (
-              <div className="project" key={project.id}>
-                <a
-                  href={project.website}
-                  className="project-title"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {project.title}
-                  <Link />
-                </a>
-                <a
-                  href={project.github}
-                  className="project-tecs"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {project.tecs.map(
-                    (tec, index) =>
-                      tec + (index !== project.tecs.length - 1 ? " · " : "")
-                  )}
-                  {project.github ? <Github /> : ""}
-                </a>
-              </div>
-            );
-          }) : 
-          (
+          {projects ? (
+            projects.map((project) => {
+              return (
+                <div className="project" key={project.id} id={project.id}>
+                  <a
+                    href={project.website}
+                    className="project-title"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {project.title}
+                    <Link />
+                  </a>
+                  <a
+                    href={project.github}
+                    className="project-tecs"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {project.tecs.map(
+                      (tec, index) =>
+                        tec + (index !== project.tecs.length - 1 ? " · " : "")
+                    )}
+                    {project.github ? <Github /> : ""}
+                  </a>
+                  <img
+                    loading="lazy"
+                    title={project.title}
+                    className="project-snapshot"
+                    src={project.snapshot}
+                  />
+                </div>
+              );
+            })
+          ) : (
             <>
               <div className="project">
                 <a className="project-title loading">
                   Loading Project Title...
                 </a>
-                <a className="project-tecs loading">
-                  Loading Tecs used...
-                </a>
+                <a className="project-tecs loading">Loading Tecs used...</a>
               </div>
             </>
           )}
