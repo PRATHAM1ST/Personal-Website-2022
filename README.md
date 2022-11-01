@@ -1,1 +1,1 @@
-This website speaks a tiny potential and capabilities on things I can make
+# `A GLIMPS OF WHAT I CAN DO AND HAVE DONE. 😌`
