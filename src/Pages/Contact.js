@@ -19,7 +19,7 @@ export default function Contact() {
   return (
     <>
       <div id="Contact">
-        <div className="title-name">Hello!!!</div>
+        <div className="title-name stop-title">Hello!!!</div>
         <div className="description">
           <div className="mail-address">
             <label htmlFor="email">Email</label>

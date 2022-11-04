@@ -18,6 +18,10 @@
   width: fit-content;
 }
 
+.stop-title{
+  animation: stop-animating-name 10s ease-in-out infinite;
+}
+
 @keyframes animate-name {
   from {
     transform: translate(0);
@@ -29,6 +33,18 @@
   }
   to {
     transform: translate(0);
+    text-shadow: -0.1em 0.1em var(--quaternary-clr);
+  }
+}
+
+@keyframes stop-animating-name {
+  from {
+    text-shadow: -0.1em 0.1em var(--quaternary-clr);
+  }
+  50% {
+    text-shadow: 0.1em 0.1em var(--quaternary-clr);
+  }
+  to {
     text-shadow: -0.1em 0.1em var(--quaternary-clr);
   }
 }
@@ -60,7 +76,7 @@
   width: 100%;
   object-position: 0 100%;
   animation: animate-entry-hero-start 0.25s 0.25s linear forwards,
-    animate-hero-start 5s ease-in-out 0.5s alternate-reverse infinite;
+    animate-hero-start 10s ease-in-out 0.5s alternate-reverse infinite;
   overflow: hidden;
 }
 
@@ -70,7 +86,7 @@
     object-position: 50% 70%;
   }
   to {
-    transform: translate(0, 10%);
+    transform: translate(0, 5%);
     object-position: 50% 100%;
   }
 }
@@ -94,7 +110,7 @@
   filter: saturate(0);
   object-position: 0 70%;
   animation: animate-entry-hero-middle 0.25s 0.25s linear forwards,
-    animate-hero-middle 5s ease-in-out 0.5s alternate-reverse infinite;
+    animate-hero-middle 10s ease-in-out 0.5s alternate-reverse infinite;
   overflow: hidden;
 }
 
@@ -129,7 +145,7 @@
   z-index: -1;
   object-position: 10% 70%;
   animation: animate-entry-hero-end 0.25s 0.25s linear forwards,
-    animate-hero-end 5s ease-in-out 0.5s alternate-reverse infinite;
+    animate-hero-end 10s ease-in-out 0.5s alternate-reverse infinite;
   overflow: hidden;
 }
 
@@ -139,7 +155,7 @@
     object-position: 50% 70%;
   }
   to {
-    transform: translate(-5%, 0);
+    transform: translate(-2.5%, 0);
     object-position: 50% 80%;
   }
 }
@@ -154,6 +170,7 @@
 }
 
 .specific-page-link {
+  padding-top: 1rem;
   text-decoration: none;
   display: flex;
   justify-content: flex-start;

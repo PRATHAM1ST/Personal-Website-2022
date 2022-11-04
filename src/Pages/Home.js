@@ -18,6 +18,7 @@ export default function Home() {
   useEffect(() => {
     document.title = "P R A T H A M";
     document.body.style.overflow = "hidden";
+    document.body.style.height = "calc(100vh - var(--margin))";
   });
 
   return (

@@ -18,7 +18,7 @@ export default function Work() {
   return (
     <>
       <div id="Work">
-        <div className="title-name">Work</div>
+        <div className="title-name stop-title">Work</div>
         <div className="description">
           <p>
             This are some of my effortful and exciting works online right now.

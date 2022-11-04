@@ -17,7 +17,7 @@ export default function About() {
   return (
     <>
       <div id="About">
-        <div className="title-name">About</div>
+        <div className="title-name stop-title">About</div>
         <div className="description">
           <p className="bold-description">
             I’m PRATHAM.
@@ -61,7 +61,7 @@ export default function About() {
       </div>
 
       <div id="Skill">
-        <div className="title-name">Skills</div>
+        <div className="title-name stop-title">Skills</div>
         <div className="description">
           <div className="bold-description">
             HTML and CSS · Javascript · React · Firebase · Nodejs · Python ·
