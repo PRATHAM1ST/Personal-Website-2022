@@ -8,10 +8,10 @@ export function useHomeMedia(){
   useEffect(() => {
     (async () => {
       const received = await getHomeMedia();
-      await setImages(received.Images);
-      await setVideos(received.Videos);
+      setImages(received.Images);
+      setVideos(received.Videos);
     })();
-  });
+  }, []);
 
   return [videos, images];
 }
