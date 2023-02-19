@@ -54,7 +54,7 @@
 .project-title:hover,
 .project-tecs:hover {
   text-shadow: 0.15em 0.15em #ffffff;
-  animation: jiggle 0.25s ease-in-out;
+  /* animation: jiggle 0.25s ease-in-out; */
 }
 
 @keyframes jiggle {

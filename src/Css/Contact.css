@@ -16,9 +16,9 @@
 
 .description > div {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   width: fit-content;
-  column-gap: 3em;
+  column-gap: 5em;
   row-gap: .5em;
 }
 
@@ -29,9 +29,10 @@
   font-size: var(--fs-compact);
   letter-spacing: 0.75em;
 }
+
 .description > div > a:hover {
   text-shadow: 0.15em 0.15em 0 var(--quaternary-clr);
-  animation: jiggle 0.25s ease-in-out;
+  /* animation: jiggle 0.25s ease-in-out; */
 }
 
 .description > div > a {
@@ -43,11 +44,12 @@
   font-size: var(--fs-big);
   font-weight: 800;
   gap: 1em;
-  width: 100%;
+  width: fit-content;
   color: var(--secondary-clr);
 }
 
-.description > div > a > svg {
+.description > div > a > svg, 
+.description > div > a > img {
   height: 1em !important;
   width: fit-content;
   margin-left: auto;
@@ -62,5 +64,10 @@
     height: calc(100vh - var(--navigation-height) * 4);
     padding-top: calc(var(--navigation-height) / 1.5);
     gap: 0;
+  }
+
+  .description > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
 }

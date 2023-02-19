@@ -1,11 +1,11 @@
 import { ReactComponent as Link } from "../Assets/SVG/link.svg";
-import { ReactComponent as Arrow } from "../Assets/SVG/arrow.svg";
-import { ReactComponent as Github } from "../Assets/SVG/github.svg";
-import { ReactComponent as LinkedIn } from "../Assets/SVG/linkedin.svg";
-import { ReactComponent as Instagram } from "../Assets/SVG/instagram.svg";
-import { ReactComponent as Twitter } from "../Assets/SVG/twitter.svg";
-import { ReactComponent as Hackster } from "../Assets/SVG/hackster.svg";
-import { ReactComponent as Email } from "../Assets/SVG/email.svg";
+import { ReactComponent as Arrow }  from "../Assets/SVG/arrow.svg";
+import { ReactComponent as Github }  from "../Assets/SVG/github.svg";
+import { ReactComponent as LinkedIn }  from "../Assets/SVG/linkedin.svg";
+import { ReactComponent as Instagram }  from "../Assets/SVG/instagram.svg";
+import { ReactComponent as Twitter }  from "../Assets/SVG/twitter.svg";
+import { ReactComponent as Hackster }  from "../Assets/SVG/hackster.svg";
+import { ReactComponent as Email }  from "../Assets/SVG/email.svg";
 
 import "../Css/Contact.css";
 import { useEffect } from "react";
@@ -50,10 +50,6 @@ export default function Contact() {
 
   return (
     <>
-    <head>
-      <title>Contact - Pratham Chudasama</title>
-      <meta name="description" content="Get in touch with Pratham Chudasama via email or social media. Find his resume here." />
-    </head>
       <div id="Contact">
         <div className="title-name stop-title">Hello!!!</div>
         <div className="description">
@@ -101,7 +97,7 @@ export default function Contact() {
         </div>
         <a className="specific-page-link" href="/">
           <span>Home</span>
-          <Arrow alt="arrow"/>
+          <img src={Arrow} alt="arrow"/>
         </a>
       </div>
     </>
