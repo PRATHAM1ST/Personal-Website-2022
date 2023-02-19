@@ -52,8 +52,8 @@ export default function Work() {
   return (
     <>
       <div id="Work">
-        <div className="title-name stop-title">Work</div>
-        <div className="description">
+        <h1 className="title-name stop-title">Work</h1>
+        <h2 className="description">
           <p>
             This are some of my effortful and exciting works online right now.
             Check it out!
@@ -62,7 +62,7 @@ export default function Work() {
             In this growing and changing world, learning and gaining new skills
             are important and my aims are growing with it.
           </p>
-        </div>
+        </h2>
         <div className="projects">
           {projects ? (
             projects.map((project) => {

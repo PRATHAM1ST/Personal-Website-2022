@@ -51,7 +51,7 @@ export default function Contact() {
   return (
     <>
       <div id="Contact">
-        <div className="title-name stop-title">Hello!!!</div>
+        <h1 className="title-name stop-title">Hello!!!</h1>
         <div className="description">
           <div className="mail-address">
             <label htmlFor="email">Email</label>

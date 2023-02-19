@@ -55,7 +55,7 @@ export default function Home() {
   return (
     <>
       <div id="Home">
-        <div className="title-name">Pratham&nbsp;Chudasama</div>
+        <h1 className="title-name">Pratham&nbsp;Chudasama</h1>
         <div className="description">
           Learning and creating engaging web-dev projects.
         </div>
