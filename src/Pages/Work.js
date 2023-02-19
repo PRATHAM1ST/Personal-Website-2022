@@ -44,6 +44,7 @@ export default function Work() {
     ogDescription.setAttribute("property", "og:description");
     ogDescription.setAttribute("content", "View examples of my effortful and exciting works online. Learn about the tecs used and check out my GitHub repositories.");
     document.head.appendChild(ogDescription);
+    
     (async () => {
       setProjects(await getWork());
     })();
