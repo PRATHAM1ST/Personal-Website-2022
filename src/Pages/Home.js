@@ -17,6 +17,42 @@ export default function Home() {
 
   useEffect(() => {
     document.title = "P R A T H A M";
+    
+    const metaDescription = document.createElement("meta");
+    metaDescription.setAttribute("name", "description");
+    metaDescription.setAttribute("content", "This is my personal website where I showcase my work and share my experiences as a web developer.");
+    document.head.appendChild(metaDescription);
+
+    const metaKeywords = document.createElement("meta");
+    metaKeywords.setAttribute("name", "keywords");
+    metaKeywords.setAttribute("content", "web development, programming, personal website");
+    document.head.appendChild(metaKeywords);
+
+    const metaAuthor = document.createElement("meta");
+    metaAuthor.setAttribute("name", "author");
+    metaAuthor.setAttribute("content", "Pratham Chudasama");
+    document.head.appendChild(metaAuthor);
+
+    const ogTitle = document.createElement("meta");
+    ogTitle.setAttribute("property", "og:title");
+    ogTitle.setAttribute("content", "P R A T H A M - Personal Website");
+    document.head.appendChild(ogTitle);
+
+    const ogUrl = document.createElement("meta");
+    ogUrl.setAttribute("property", "og:url");
+    ogUrl.setAttribute("content", "https://www.pratham-chudasama.co/");
+    document.head.appendChild(ogUrl);
+
+    const ogImage = document.createElement("meta");
+    ogImage.setAttribute("property", "og:image");
+    ogImage.setAttribute("content", "https://www.pratham-chudasama.co/image.png");
+    document.head.appendChild(ogImage);
+
+    const ogDescription = document.createElement("meta");
+    ogDescription.setAttribute("property", "og:description");
+    ogDescription.setAttribute("content", "This is my personal website where I showcase my work and share my experiences as a web developer.");
+    document.head.appendChild(ogDescription);
+
     document.body.style.overflow = "hidden";
     document.body.style.height = "calc(100vh - var(--margin))";
   });
