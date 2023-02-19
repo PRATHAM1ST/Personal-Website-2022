@@ -3,6 +3,8 @@ import { ReactComponent as Arrow } from "../Assets/SVG/arrow.svg";
 import { ReactComponent as Github } from "../Assets/SVG/github.svg";
 import { ReactComponent as LinkedIn } from "../Assets/SVG/linkedin.svg";
 import { ReactComponent as Instagram } from "../Assets/SVG/instagram.svg";
+import { ReactComponent as Twitter } from "../Assets/SVG/twitter.svg";
+import { ReactComponent as Hackster } from "../Assets/SVG/hackster.svg";
 import { ReactComponent as Email } from "../Assets/SVG/email.svg";
 
 import "../Css/Contact.css";
@@ -41,6 +43,14 @@ export default function Contact() {
             <a id="instagram" href="https://www.instagram.com/awesome_pratham/" target="_blank" rel="noreferrer">
               Instagram
               <Instagram />
+            </a>
+            <a id="twitter" href="https://www.twitter.com/Pratham1st2002/" target="_blank" rel="noreferrer">
+              Twitter
+              <Twitter />
+            </a>
+            <a id="hackster" href="https://www.hackster.io/pratham1st" target="_blank" rel="noreferrer">
+              Hackster
+              <Hackster />
             </a>
           </div>
           <div className="resume-link">

@@ -15,12 +15,15 @@
 }
 
 .description > div {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   width: fit-content;
+  column-gap: 3em;
+  row-gap: .5em;
 }
 
 .description > div > label {
+  grid-column: 1 / -1;
   font-size: var(--fs-compact);
   text-transform: uppercase;
   font-size: var(--fs-compact);
@@ -33,19 +36,21 @@
 
 .description > div > a {
   display: flex;
+  flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   text-decoration: none;
   font-size: var(--fs-big);
   font-weight: 800;
   gap: 1em;
-  width: fit-content;
+  width: 100%;
   color: var(--secondary-clr);
 }
 
 .description > div > a > svg {
   height: 1em !important;
   width: fit-content;
+  margin-left: auto;
 }
 
 .description > div > a > svg > path {
