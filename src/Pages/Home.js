@@ -43,11 +43,6 @@ export default function Home() {
     ogUrl.setAttribute("content", "https://www.pratham-chudasama.co/");
     document.head.appendChild(ogUrl);
 
-    const ogImage = document.createElement("meta");
-    ogImage.setAttribute("property", "og:image");
-    ogImage.setAttribute("content", "https://www.pratham-chudasama.co/image.png");
-    document.head.appendChild(ogImage);
-
     const ogDescription = document.createElement("meta");
     ogDescription.setAttribute("property", "og:description");
     ogDescription.setAttribute("content", "This is my personal website where I showcase my work and share my experiences as a web developer.");
