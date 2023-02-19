@@ -12,6 +12,36 @@ export default function About() {
 
   useEffect(() => {
     document.title = "A B O U T";
+
+    const metaDescription = document.createElement("meta");
+    metaDescription.setAttribute("name", "description");
+    metaDescription.setAttribute("content", "Meet PRATHAM, a talented web developer and student studying ICT at LJIET. Learn about his passion for programming, his skills in HTML, CSS, JavaScript, React, Firebase, Node.js, and more, and how he's looking for an internship to gain experience. View his resume and contact him to work together on your next project.");
+    document.head.appendChild(metaDescription);
+
+    const metaKeywords = document.createElement("meta");
+    metaKeywords.setAttribute("name", "keywords");
+    metaKeywords.setAttribute("content", "web development, programming, personal website");
+    document.head.appendChild(metaKeywords);
+
+    const metaAuthor = document.createElement("meta");
+    metaAuthor.setAttribute("name", "author");
+    metaAuthor.setAttribute("content", "Pratham Chudasama");
+    document.head.appendChild(metaAuthor);
+
+    const ogTitle = document.createElement("meta");
+    ogTitle.setAttribute("property", "og:title");
+    ogTitle.setAttribute("content", "A B O U T");
+    document.head.appendChild(ogTitle);
+
+    const ogUrl = document.createElement("meta");
+    ogUrl.setAttribute("property", "og:url");
+    ogUrl.setAttribute("content", "https://www.pratham-chudasama.co/");
+    document.head.appendChild(ogUrl);
+
+    const ogDescription = document.createElement("meta");
+    ogDescription.setAttribute("property", "og:description");
+    ogDescription.setAttribute("content", "Meet PRATHAM, a talented web developer and student studying ICT at LJIET. Learn about his passion for programming, his skills in HTML, CSS, JavaScript, React, Firebase, Node.js, and more, and how he's looking for an internship to gain experience. View his resume and contact him to work together on your next project.");
+    document.head.appendChild(ogDescription);
   }, []);
 
   return (
@@ -64,7 +94,7 @@ export default function About() {
         <div className="title-name stop-title">Skills</div>
         <div className="description">
           <div className="bold-description">
-            HTML and CSS · Javascript · React · Firebase · Nodejs · Python ·
+            HTML and CSS · Javascript · React · Next · Firebase · Nodejs · Python ·
             Illustrations · UI/UX Designs · Graphic Designs ...
           </div>
           <a
@@ -79,7 +109,7 @@ export default function About() {
         </div>
         <a className="specific-page-link" href="/contact">
           <span>contact</span>
-          <Arrow />
+          <Arrow alt="arrow"/>
         </a>
       </div>
     </>
