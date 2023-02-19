@@ -10,6 +10,40 @@ export default function Work() {
 
   useEffect(() => {
     document.title = "W O R K";
+    const metaDescription = document.createElement("meta");
+    metaDescription.setAttribute("name", "description");
+    metaDescription.setAttribute("content", "View examples of my effortful and exciting works online. Learn about the tecs used and check out my GitHub repositories.");
+    document.head.appendChild(metaDescription);
+
+    const metaKeywords = document.createElement("meta");
+    metaKeywords.setAttribute("name", "keywords");
+    metaKeywords.setAttribute("content", "web development, projects, examples, tecs, GitHub, portfolio");
+    document.head.appendChild(metaKeywords);
+
+    const metaAuthor = document.createElement("meta");
+    metaAuthor.setAttribute("name", "author");
+    metaAuthor.setAttribute("content", "Pratham Chudasama");
+    document.head.appendChild(metaAuthor);
+
+    const ogTitle = document.createElement("meta");
+    ogTitle.setAttribute("property", "og:title");
+    ogTitle.setAttribute("content", "C O N T A C T");
+    document.head.appendChild(ogTitle);
+
+    const ogUrl = document.createElement("meta");
+    ogUrl.setAttribute("property", "og:url");
+    ogUrl.setAttribute("content", "https://www.pratham-chudasama.co/");
+    document.head.appendChild(ogUrl);
+
+    const ogImage = document.createElement("meta");
+    ogImage.setAttribute("property", "og:image");
+    ogImage.setAttribute("content", "https://www.pratham-chudasama.co/image.png");
+    document.head.appendChild(ogImage);
+
+    const ogDescription = document.createElement("meta");
+    ogDescription.setAttribute("property", "og:description");
+    ogDescription.setAttribute("content", "View examples of my effortful and exciting works online. Learn about the tecs used and check out my GitHub repositories.");
+    document.head.appendChild(ogDescription);
     (async () => {
       setProjects(await getWork());
     })();
@@ -41,7 +75,7 @@ export default function Work() {
                     rel="noreferrer"
                   >
                     {project.title}
-                    <Link />
+                    <Link alt="project link"/>
                   </a>
                   <a
                     href={project.github}
@@ -53,7 +87,7 @@ export default function Work() {
                       (tec, index) =>
                         tec + (index !== project.tecs.length - 1 ? " · " : "")
                     )}
-                    {project.github ? <Github /> : ""}
+                    {project.github ? <Github alt="github"/> : ""}
                   </a>
                   <img
                     loading="lazy"
@@ -78,7 +112,7 @@ export default function Work() {
         </div>
         <a className="specific-page-link" href="/about">
           <span>about</span>
-          <Arrow />
+          <Arrow alt="arrow"/>
         </a>
       </div>
     </>
