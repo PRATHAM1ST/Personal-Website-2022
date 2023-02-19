@@ -16,10 +16,44 @@ export default function Contact() {
 
   useEffect(()=>{
     document.title = "C O N T A C T";
+
+    const metaDescription = document.createElement("meta");
+    metaDescription.setAttribute("name", "description");
+    metaDescription.setAttribute("content", "Contact Pratham Chudasama, a web developer and programmer, via email or social media. View his resume and explore his work on Github and Hackster.");
+    document.head.appendChild(metaDescription);
+
+    const metaKeywords = document.createElement("meta");
+    metaKeywords.setAttribute("name", "keywords");
+    metaKeywords.setAttribute("content", "web development, programming, personal website");
+    document.head.appendChild(metaKeywords);
+
+    const metaAuthor = document.createElement("meta");
+    metaAuthor.setAttribute("name", "author");
+    metaAuthor.setAttribute("content", "Pratham Chudasama");
+    document.head.appendChild(metaAuthor);
+
+    const ogTitle = document.createElement("meta");
+    ogTitle.setAttribute("property", "og:title");
+    ogTitle.setAttribute("content", "C O N T A C T");
+    document.head.appendChild(ogTitle);
+
+    const ogUrl = document.createElement("meta");
+    ogUrl.setAttribute("property", "og:url");
+    ogUrl.setAttribute("content", "https://www.pratham-chudasama.co/contact");
+    document.head.appendChild(ogUrl);
+
+    const ogDescription = document.createElement("meta");
+    ogDescription.setAttribute("property", "og:description");
+    ogDescription.setAttribute("content", "Contact Pratham Chudasama, a web developer and programmer, via email or social media. View his resume and explore his work on Github and Hackster.");
+    document.head.appendChild(ogDescription);
   }, [])
 
   return (
     <>
+    <head>
+      <title>Contact - Pratham Chudasama</title>
+      <meta name="description" content="Get in touch with Pratham Chudasama via email or social media. Find his resume here." />
+    </head>
       <div id="Contact">
         <div className="title-name stop-title">Hello!!!</div>
         <div className="description">
@@ -27,30 +61,30 @@ export default function Contact() {
             <label htmlFor="email">Email</label>
             <a id="email" href="mailto:prathamchudasama142@gmail.com" target="_blank" rel="noreferrer">
               prathamchudasama142@gmail.com
-              <Email />
+              <Email alt="email"/>
             </a>
           </div>
           <div className="internet-links">
             <label>On The Internet</label>
             <a id="github" href="https://github.com/PRATHAM1ST" target="_blank" rel="noreferrer">
               Github
-              <Github />
+              <Github alt="github"/>
             </a>
             <a id="linkedin" href="https://www.linkedin.com/in/pratham-chudasama-32309822a/" target="_blank" rel="noreferrer">
               LinkedIn
-              <LinkedIn />
+              <LinkedIn alt="linkedin"/>
             </a>
             <a id="instagram" href="https://www.instagram.com/awesome_pratham/" target="_blank" rel="noreferrer">
               Instagram
-              <Instagram />
+              <Instagram alt="instagram"/>
             </a>
             <a id="twitter" href="https://www.twitter.com/Pratham1st2002/" target="_blank" rel="noreferrer">
               Twitter
-              <Twitter />
+              <Twitter alt="twitter"/>
             </a>
             <a id="hackster" href="https://www.hackster.io/pratham1st" target="_blank" rel="noreferrer">
               Hackster
-              <Hackster />
+              <Hackster alt="hackster"/>
             </a>
           </div>
           <div className="resume-link">
@@ -61,13 +95,13 @@ export default function Contact() {
               target="_blank" rel="noreferrer"
             >
               Resume
-              <Link />
+              <Link alt="link"/>
             </a>
           </div>
         </div>
         <a className="specific-page-link" href="/">
           <span>Home</span>
-          <Arrow />
+          <Arrow alt="arrow"/>
         </a>
       </div>
     </>
