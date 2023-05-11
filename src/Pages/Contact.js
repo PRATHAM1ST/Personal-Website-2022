@@ -87,7 +87,7 @@ export default function Contact() {
             <label htmlFor="resume">My Resume</label>
             <a
               id="resume"
-              href="https://drive.google.com/file/d/1Q6srS9hRvFzKY1vp1dpNpoBbd5QlWZmq/view"
+              href="https://drive.google.com/file/d/13W_CPPzy5zP4fTvZGMBrpqBo0282kdqw/view?usp=share_link"
               target="_blank" rel="noreferrer"
             >
               Resume
