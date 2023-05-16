@@ -1,5 +1,5 @@
 import { ReactComponent as Link } from "../Assets/SVG/link.svg";
-import { ReactComponent as Arrow }  from "../Assets/SVG/arrow.svg";
+import { ReactComponent as Arrow } from "../Assets/SVG/arrow.svg";
 import { ReactComponent as Github }  from "../Assets/SVG/github.svg";
 import { ReactComponent as LinkedIn }  from "../Assets/SVG/linkedin.svg";
 import { ReactComponent as Instagram }  from "../Assets/SVG/instagram.svg";
@@ -97,7 +97,7 @@ export default function Contact() {
         </div>
         <a className="specific-page-link" href="/">
           <span>Home</span>
-          <img src={Arrow} alt="arrow"/>
+          <Arrow alt="arrow" />
         </a>
       </div>
     </>
