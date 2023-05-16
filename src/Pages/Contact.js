@@ -55,8 +55,8 @@ export default function Contact() {
         <div className="description">
           <div className="mail-address">
             <label htmlFor="email">Email</label>
-            <a id="email" href="mailto:prathamchudasama142@gmail.com" target="_blank" rel="noreferrer">
-              prathamchudasama142@gmail.com
+            <a id="email" href="mailto:chudasamapratham142@gmail.com" target="_blank" rel="noreferrer">
+              chudasamapratham142@gmail.com
               <Email alt="email"/>
             </a>
           </div>
