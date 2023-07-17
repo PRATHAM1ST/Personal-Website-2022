@@ -17,6 +17,11 @@
   }
 }
 
+.user-skills {
+  text-decoration: none;
+  color: black;
+}
+
 .user-skills > ol {
   list-style: none;
 }
