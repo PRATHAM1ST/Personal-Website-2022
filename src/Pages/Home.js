@@ -16,11 +16,11 @@ export default function Home() {
   };
 
   useEffect(() => {
-    document.title = "P R A T H A M";
-    
+    document.title = "Pratham - Web Developer | Showcasing My Work";
+
     const metaDescription = document.createElement("meta");
     metaDescription.setAttribute("name", "description");
-    metaDescription.setAttribute("content", "This is my personal website where I showcase my work and share my experiences as a web developer.");
+    metaDescription.setAttribute("content", "Welcome to my personal website! I'm Pratham, a passionate web developer dedicated to delivering top-notch websites and web applications. Explore my portfolio and discover my work in front-end and back-end development, responsive design, and more.");
     document.head.appendChild(metaDescription);
 
     const metaKeywords = document.createElement("meta");
@@ -35,7 +35,7 @@ export default function Home() {
 
     const ogTitle = document.createElement("meta");
     ogTitle.setAttribute("property", "og:title");
-    ogTitle.setAttribute("content", "P R A T H A M - Personal Website");
+    ogTitle.setAttribute("content", "Pratham - Web Developer | Showcasing My Work");
     document.head.appendChild(ogTitle);
 
     const ogUrl = document.createElement("meta");
@@ -45,12 +45,12 @@ export default function Home() {
 
     const ogDescription = document.createElement("meta");
     ogDescription.setAttribute("property", "og:description");
-    ogDescription.setAttribute("content", "This is my personal website where I showcase my work and share my experiences as a web developer.");
+    ogDescription.setAttribute("content", "Welcome to my personal website! I'm Pratham, a passionate web developer dedicated to delivering top-notch websites and web applications. Explore my portfolio and discover my work in front-end and back-end development, responsive design, and more.");
     document.head.appendChild(ogDescription);
 
     document.body.style.overflow = "hidden";
     document.body.style.height = "calc(100vh - var(--margin))";
-  });
+}, []);
 
   return (
     <>
