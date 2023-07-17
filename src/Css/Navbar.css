@@ -7,8 +7,6 @@
   align-items: center;
   padding: 0 var(--margin);
   z-index: 1;
-  text-decoration: none;
-  color: black;
 }
 @keyframes page-animate {
   from{
@@ -27,6 +25,8 @@
   text-transform: uppercase;
   font-size: var(--fs-compact);
   letter-spacing: 0.75em;
+  text-decoration: none;
+  color: black;
 }
 
 .nav-link-opener {

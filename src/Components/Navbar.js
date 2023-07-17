@@ -36,8 +36,8 @@ export default function Navbar() {
   return (
     <>
       {openNavPanel && <NavigationPanel style={styleAnimation} />}
-      <a href="/" id="Nav">
-        <div className="user-skills">
+      <nav id="Nav">
+        <a className="user-skills" href="/">
           <ol>
             <li
               style={{
@@ -67,7 +67,7 @@ export default function Navbar() {
               Student
             </li>
           </ol>
-        </div>
+        </a>
         <div className="nav-link-opener">
           <a
             tabIndex={1}
@@ -95,7 +95,7 @@ export default function Navbar() {
             })}
           </div>
         </div>
-      </a>
+      </nav>
     </>
   );
 }
