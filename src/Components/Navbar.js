@@ -36,7 +36,7 @@ export default function Navbar() {
   return (
     <>
       {openNavPanel && <NavigationPanel style={styleAnimation} />}
-      <div id="Nav">
+      <a href="/" id="Nav">
         <div className="user-skills">
           <ol>
             <li
@@ -95,7 +95,7 @@ export default function Navbar() {
             })}
           </div>
         </div>
-      </div>
+      </a>
     </>
   );
 }

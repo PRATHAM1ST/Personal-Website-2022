@@ -7,7 +7,7 @@ export default function NavigationPanel({style}) {
   return (
     <>
       <div id="NavigationPanel" style={{animation: style}}>
-        <div className="links">
+        <nav className="links">
           {pages.map((page) => {
             if (page !== window.location.pathname.substring(1)) {
               if (page === "") {
@@ -25,7 +25,7 @@ export default function NavigationPanel({style}) {
             }
             return ""
           })}
-        </div>
+        </nav>
       </div>
     </>
   );
