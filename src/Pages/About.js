@@ -11,7 +11,7 @@ export default function About() {
 	const image = useAboutMedia();
 
 	useEffect(() => {
-		document.title = "A B O U T";
+		document.title = "A B O U T - Web Developer | Showcasing My Work";
 
 		const metaDescription = document.createElement("meta");
 		metaDescription.setAttribute("name", "description");

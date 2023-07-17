@@ -16,7 +16,7 @@ export default function Home() {
   };
 
   useEffect(() => {
-    document.title = "Pratham - Web Developer | Showcasing My Work";
+    document.title = "P R A T H A M - Web Developer | Showcasing My Work";
 
     const metaDescription = document.createElement("meta");
     metaDescription.setAttribute("name", "description");

@@ -15,7 +15,7 @@ export default function Contact() {
   document.body.style.overflow = "hidden";
 
   useEffect(()=>{
-    document.title = "C O N T A C T";
+    document.title = "C O N T A C T - Web Developer | Showcasing My Work";
 
     const metaDescription = document.createElement("meta");
     metaDescription.setAttribute("name", "description");

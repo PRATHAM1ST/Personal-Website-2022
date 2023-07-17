@@ -9,7 +9,7 @@ export default function Work() {
   const [projects, setProjects] = useState(null);
 
   useEffect(() => {
-    document.title = "W O R K";
+    document.title = "W O R K - Web Developer | Showcasing My Work";
     const metaDescription = document.createElement("meta");
     metaDescription.setAttribute("name", "description");
     metaDescription.setAttribute("content", "View examples of my effortful and exciting works online. Learn about the tecs used and check out my GitHub repositories.");
@@ -37,7 +37,7 @@ export default function Work() {
 
     const ogImage = document.createElement("meta");
     ogImage.setAttribute("property", "og:image");
-    ogImage.setAttribute("content", "https://www.pratham-chudasama.co/image.png");
+    ogImage.setAttribute("content", "https://www.pratham-chudasama.co/favicon.png");
     document.head.appendChild(ogImage);
 
     const ogDescription = document.createElement("meta");
