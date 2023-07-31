@@ -121,7 +121,7 @@ export default function About() {
 					</div>
 					<a
 						className="resume"
-						href="https://drive.google.com/file/d/13W_CPPzy5zP4fTvZGMBrpqBo0282kdqw/view?usp=share_link"
+						href={process.env.REACT_APP_RESUME_URL}
 						target="_blank"
 						rel="noreferrer"
 					>

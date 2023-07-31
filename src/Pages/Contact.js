@@ -55,30 +55,30 @@ export default function Contact() {
         <div className="description">
           <div className="mail-address">
             <label htmlFor="email">Email</label>
-            <a id="email" href="mailto:chudasamapratham142@gmail.com" target="_blank" rel="noreferrer">
-              chudasamapratham142@gmail.com
+            <a id="email" href={"mailto:" + process.env.REACT_APP_EMAIL} target="_blank" rel="noreferrer">
+              {process.env.REACT_APP_EMAIL}
               <Email alt="email"/>
             </a>
           </div>
           <div className="internet-links">
             <label>On The Internet</label>
-            <a id="github" href="https://github.com/PRATHAM1ST" target="_blank" rel="noreferrer">
+            <a id="github" href={process.env.REACT_APP_GITHUB_URL} target="_blank" rel="noreferrer">
               Github
               <Github alt="github"/>
             </a>
-            <a id="linkedin" href="https://www.linkedin.com/in/pratham-chudasama-32309822a/" target="_blank" rel="noreferrer">
+            <a id="linkedin" href={process.env.REACT_APP_LINKEDIN_URL} target="_blank" rel="noreferrer">
               LinkedIn
               <LinkedIn alt="linkedin"/>
             </a>
-            <a id="instagram" href="https://www.instagram.com/awesome_pratham/" target="_blank" rel="noreferrer">
+            <a id="instagram" href={process.env.REACT_APP_INSTAGRAM_URL} target="_blank" rel="noreferrer">
               Instagram
               <Instagram alt="instagram"/>
             </a>
-            <a id="twitter" href="https://www.twitter.com/Pratham1st2002/" target="_blank" rel="noreferrer">
+            <a id="twitter" href={process.env.REACT_APP_TWITTER_URL} target="_blank" rel="noreferrer">
               Twitter
               <Twitter alt="twitter"/>
             </a>
-            <a id="hackster" href="https://www.hackster.io/pratham1st" target="_blank" rel="noreferrer">
+            <a id="hackster" href={process.env.REACT_APP_HACKSTER_URL} target="_blank" rel="noreferrer">
               Hackster
               <Hackster alt="hackster"/>
             </a>
@@ -87,7 +87,7 @@ export default function Contact() {
             <label htmlFor="resume">My Resume</label>
             <a
               id="resume"
-              href="https://drive.google.com/file/d/13W_CPPzy5zP4fTvZGMBrpqBo0282kdqw/view?usp=share_link"
+              href={process.env.REACT_APP_RESUME_URL}
               target="_blank" rel="noreferrer"
             >
               Resume
