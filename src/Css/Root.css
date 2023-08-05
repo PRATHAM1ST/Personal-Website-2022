@@ -42,6 +42,7 @@
 @media screen and (max-width: 425px) {
   :root {
     --margin: 10px;
+    /* --fs-hero-title : 9vmax; */
   }
 }
 

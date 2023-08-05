@@ -177,10 +177,10 @@ export default function Work() {
           ) : (
             <>
               <div className="project">
-                <a className="project-title loading">
+                <a className="project-title loading" href="#ff">
                   Loading Project Title...
                 </a>
-                <a className="project-tecs loading">Loading Tecs used...</a>
+                <a className="project-tecs loading" href="#ff">Loading Tecs used...</a>
               </div>
             </>
           )}

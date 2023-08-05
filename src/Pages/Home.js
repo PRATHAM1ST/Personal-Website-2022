@@ -98,6 +98,7 @@ export default function Home() {
 		}).then(() => {
 			gsap.to(titleNameRef.current, {
 				delay: 1,
+				fontSize: "var(--fs-hero-title)",
 				position: "relative",
 				display: "flex",
 				gap: "1rem",
@@ -150,11 +151,35 @@ export default function Home() {
 			opacity: 0,
 			ease: "power4.out",
 			overflow: "hidden",
-		}).then(() =>
+		}).then(() => {
 			gsap.to(assetsRef.current.children, {
 				opacity: 1,
-			})
-		);
+			});
+
+			gsap.fromTo(".hero-start", {
+				translate: "0, 0",
+				objectPosition: "50% 70%"
+			},{
+				translate: "0, 5%",
+				objectPosition: "50% 100%",
+			}).repeat(-1).yoyo(true).duration(10).ease("linear");
+
+			gsap.fromTo(".hero-middle", {
+				scale: 1,
+				objectPosition: "0% 70%"
+			},{
+				scale: 1.1, 
+				objectPosition: "70%",
+			}).repeat(-1).yoyo(true).duration(1).ease("linear");
+
+			gsap.fromTo(".hero-end", {
+				translate: "0, 0",
+				objectPosition: "50% 70%"
+			},{
+				translate: "-2.5%, 0%",
+				objectPosition: "50% 80%",
+			}).repeat(-1).yoyo(true).duration(10).ease("linear");
+		});
 	}, [dataLoaded]);
 
 	return (
