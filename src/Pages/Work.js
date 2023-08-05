@@ -1,9 +1,17 @@
+import { useEffect, useRef, useState } from "react";
+
 import "../Css/Work.css";
+
 import { ReactComponent as Link } from "../Assets/SVG/link.svg";
 import { ReactComponent as Github } from "../Assets/SVG/github.svg";
 import { ReactComponent as Arrow } from "../Assets/SVG/arrow.svg";
-import { useEffect, useState } from "react";
+
 import { getWork } from "../Database/Firebase";
+
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Work() {
   const [projects, setProjects] = useState(null);
@@ -49,11 +57,78 @@ export default function Work() {
     })();
   }, []);
 
+  const titleRef = useRef(null);
+  const descriptionRef = useRef(null);
+  const projectsRef = useRef(null);
+	const footerRef = useRef(null);
+
+  useEffect(() => {
+    if (!titleRef.current) return;
+    if (!descriptionRef.current) return;
+    if (!projectsRef.current) return;
+    
+    gsap.from(titleRef.current, {
+      duration: 1,
+      delay: 3,
+      opacity: 0,
+      y: 50,
+      ease: "power3.out",
+    });
+
+    gsap.from(descriptionRef.current, {
+      duration: 1,
+      delay: 3,
+      opacity: 0,
+      y: 50,
+      ease: "power3.out",
+    });
+
+    gsap.from(projectsRef.current, {
+      duration: 1,
+      delay: 3,
+      opacity: 0,
+      y: 50,
+      stagger: 0.2,
+      ease: "power3.out",
+    });
+
+    gsap.from(footerRef.current.children, {
+      delay: 3,
+      duration: 1,
+      opacity: 0,
+      y: 100,
+      stagger: 0.25,
+    });
+
+  }, [titleRef, descriptionRef, projectsRef, footerRef]);
+  
+  useEffect(() => {
+    if (!projects) return;
+
+    gsap.from(projectsRef.current.children, {
+      delay: 3,
+      x: -100,
+      duration: 1,
+      ease: "power3.out",
+      opacity: 0,
+      y: 50,
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: projectsRef.current.children,
+        // start: "bottom 95%",
+        // end: "center top",
+        // markers: true,
+        scrub: 1,
+      },
+    });
+
+  }, [projects]);
+
   return (
     <>
       <div id="Work">
-        <h1 className="title-name stop-title">Work</h1>
-        <h2 className="description">
+        <h1 className="title-name stop-title" ref={titleRef}>Work</h1>
+        <h2 className="description" ref={descriptionRef}>
           <p>
             This are some of my effortful and exciting works online right now.
             Check it out!
@@ -63,7 +138,7 @@ export default function Work() {
             are important and my aims are growing with it.
           </p>
         </h2>
-        <div className="projects">
+        <div className="projects" ref={projectsRef}>
           {projects ? (
             projects.map((project) => {
               return (
@@ -110,7 +185,7 @@ export default function Work() {
             </>
           )}
         </div>
-        <a className="specific-page-link" href="/about">
+        <a className="specific-page-link" href="/about" ref={footerRef}>
           <span>about</span>
           <Arrow alt="arrow"/>
         </a>

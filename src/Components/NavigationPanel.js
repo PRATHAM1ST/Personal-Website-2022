@@ -1,5 +1,4 @@
 import "../Css/NavigationPanel.css";
-import { clickedMenuHome } from "../Database/Firebase";
 
 export default function NavigationPanel({style}) {
   const pages = ["", "work", "about", "contact"];

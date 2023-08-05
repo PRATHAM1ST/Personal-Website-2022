@@ -9,13 +9,14 @@
 }
 
 .title-name {
-  width: 100%;
+  /* width: 100%; */
   grid-column: 1 / -1;
   font-size: var(--fs-hero-title);
   font-weight: var(--fw-bold);
   text-transform: uppercase;
-  animation: animate-name 10s ease-in-out infinite;
+  /* animation: animate-name 10s ease-in-out infinite; */
   width: fit-content;
+  white-space: nowrap;
 }
 
 .stop-title{
@@ -24,14 +25,17 @@
 
 @keyframes animate-name {
   from {
+    width: fit-content;
     transform: translate(0);
     text-shadow: -0.1em 0.1em var(--quaternary-clr);
   }
   50% {
+    width: fit-content;
     transform: translate(calc(100vw - var(--margin) * 2 - 100%));
     text-shadow: 0.1em 0.1em var(--quaternary-clr);
   }
   to {
+    width: fit-content;
     transform: translate(0);
     text-shadow: -0.1em 0.1em var(--quaternary-clr);
   }
@@ -68,6 +72,8 @@
 .assets > * {
   object-fit: cover;
   transform-origin: center;
+  overflow: hidden;
+  opacity: 0;
 }
 
 .hero-start {
@@ -75,8 +81,8 @@
   height: 40vh;
   width: 100%;
   object-position: 0 100%;
-  animation: animate-entry-hero-start 0.25s 0.25s linear forwards,
-    animate-hero-start 10s ease-in-out 0.5s alternate-reverse infinite;
+  /* animation: animate-entry-hero-start 0.25s 0.25s linear forwards,
+    animate-hero-start 10s ease-in-out 0.5s alternate-reverse infinite; */
   overflow: hidden;
 }
 
@@ -109,8 +115,8 @@
   height: 45vh;
   filter: saturate(0);
   object-position: 0 70%;
-  animation: animate-entry-hero-middle 0.25s 0.25s linear forwards,
-    animate-hero-middle 10s ease-in-out 0.5s alternate-reverse infinite;
+  /* animation: animate-entry-hero-middle 0.25s 0.25s linear forwards,
+    animate-hero-middle 10s ease-in-out 0.5s alternate-reverse infinite; */
   overflow: hidden;
 }
 
@@ -144,8 +150,8 @@
   height: 55vh;
   z-index: -1;
   object-position: 10% 70%;
-  animation: animate-entry-hero-end 0.25s 0.25s linear forwards,
-    animate-hero-end 10s ease-in-out 0.5s alternate-reverse infinite;
+  /* animation: animate-entry-hero-end 0.25s 0.25s linear forwards,
+    animate-hero-end 10s ease-in-out 0.5s alternate-reverse infinite; */
   overflow: hidden;
 }
 

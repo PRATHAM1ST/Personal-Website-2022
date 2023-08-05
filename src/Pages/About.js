@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import "../Css/About.css";
 
@@ -6,6 +6,7 @@ import { ReactComponent as Link } from "../Assets/SVG/link.svg";
 import { ReactComponent as Arrow } from "../Assets/SVG/arrow.svg";
 
 import { useAboutMedia } from "../Database/Database";
+import { gsap } from "gsap";
 
 export default function About() {
 	const image = useAboutMedia();
@@ -53,11 +54,63 @@ export default function About() {
 		document.head.appendChild(ogDescription);
 	}, []);
 
+	const titleRef = useRef(null);
+	const descriptionRef = useRef(null);
+	const imageRef = useRef(null);
+	const [isImageLoaded, setIsImageLoaded] = useState(false);
+	const footerRef = useRef(null);
+
+	useEffect(() => {
+		if (!titleRef.current) return;
+		if (!descriptionRef.current) return;
+
+		gsap.from(titleRef.current, {
+			delay: 2,
+			duration: 1,
+			opacity: 0,
+			y: -100,
+			ease: "power3.out",
+		});
+
+		gsap.from(descriptionRef.current, {
+			delay: 3,
+			duration: 1,
+			opacity: 0,
+			y: 100,
+			ease: "power3.out",
+		});
+
+		gsap.from(footerRef.current.children, {
+			delay: 3,
+			duration: 1,
+			opacity: 0,
+			y: 100,
+			stagger: 0.25,
+		});
+		
+	}, [titleRef, descriptionRef, footerRef]);
+	
+	useEffect(() => {
+		if (!imageRef.current) return;
+		if (!isImageLoaded) return;
+		
+		gsap.from(imageRef.current, {
+			duration: 1,
+			opacity: 0,
+			delay: 2,
+			x: 200,
+			ease: "power3.out",
+		});
+
+	}, [imageRef, isImageLoaded]);
+
+
+
 	return (
 		<>
 			<div id="About">
-				<div className="title-name stop-title">About</div>
-				<div className="description">
+				<div className="title-name stop-title" ref={titleRef}>About</div>
+				<div className="description" ref={descriptionRef}>
 					<p className="bold-description">
 						Hello, I'm PRATHAM - a Web Developer and Student.
 					</p>
@@ -105,9 +158,12 @@ export default function About() {
 						title={image.description}
 						src={image.src}
 						alt={image.description}
+						ref={imageRef}
+						onLoad={() => setIsImageLoaded(true)}
 					/>
 				) : (
-					<div className="about-image loading" />
+					// <div className="about-image loading" />
+					<></>
 				)}
 			</div>
 
@@ -129,7 +185,7 @@ export default function About() {
 						<Link />
 					</a>
 				</div>
-				<a className="specific-page-link" href="/contact">
+				<a className="specific-page-link" href="/contact" ref={footerRef}>
 					<span>contact</span>
 					<Arrow alt="arrow" />
 				</a>

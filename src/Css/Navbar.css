@@ -51,10 +51,10 @@
   justify-content: center;
   text-transform: uppercase;
   font-size: var(--fs-small);
-  transform-origin: center center;
-  animation: circulating-text 5s linear forwards infinite;
+  /* transform-origin: center center; */
+  /* animation: circulating-text 5s linear forwards infinite; */
   z-index: -1;
-  transition: 1s ease;
+  /* transition: 1s ease; */
 }
 
 .circular-text-letter {
@@ -85,5 +85,5 @@
 
 
 .center-link:hover + .circular-text{
-  animation-duration: 2s;
+  /* animation-duration: 2s; */
 }
