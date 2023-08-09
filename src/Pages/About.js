@@ -7,6 +7,9 @@ import { ReactComponent as Arrow } from "../Assets/SVG/arrow.svg";
 
 import { useAboutMedia } from "../Database/Database";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
 	const image = useAboutMedia();
@@ -65,19 +68,24 @@ export default function About() {
 		if (!descriptionRef.current) return;
 
 		gsap.from(titleRef.current, {
-			delay: 2,
 			duration: 1,
 			opacity: 0,
 			y: -100,
-			ease: "power3.out",
 		});
 
-		gsap.from(descriptionRef.current, {
-			delay: 3,
+		gsap.from(descriptionRef.current.children, {
+			delay: 1,
 			duration: 1,
 			opacity: 0,
 			y: 100,
-			ease: "power3.out",
+			stagger: 0.25,
+			// scrollTrigger: {
+			// 	trigger: descriptionRef.current.children,
+			// 	start: "top center",
+			// 	end: "bottom center",
+			// 	markers: true,
+			// 	// toggleActions: "play pause pause revese",
+			// }
 		});
 
 		gsap.from(footerRef.current.children, {
@@ -99,7 +107,6 @@ export default function About() {
 			opacity: 0,
 			delay: 2,
 			x: 200,
-			ease: "power3.out",
 		});
 
 	}, [imageRef, isImageLoaded]);
@@ -160,6 +167,7 @@ export default function About() {
 						alt={image.description}
 						ref={imageRef}
 						onLoad={() => setIsImageLoaded(true)}
+						style={{ opacity: isImageLoaded ? 1 : 0 }}
 					/>
 				) : (
 					// <div className="about-image loading" />

@@ -65,32 +65,30 @@ export default function Contact() {
 	const footerRef = useRef(null);
 
 	useEffect(() => {
-		if (!titleRef.current || !descriptionRef.current || !footerRef.current) return;
+		if (!titleRef.current || !descriptionRef.current || !footerRef.current)
+			return;
 
-		gsap.from(
-			titleRef.current,{ 
-        duration: 1,
-        opacity: 0, 
-        y: -100
-      }
-		);
-		
-    gsap.from(descriptionRef.current.children, { 
-      delay: 2,
-      duration: 1,
-      opacity: 0, 
-      y: 100,
-      stagger: 0.25,
-    });
+		gsap.from(titleRef.current, {
+			duration: 1,
+			opacity: 0,
+			y: -100,
+		});
 
-    gsap.from(footerRef.current.children, {
-      delay: 3,
-      duration: 1,
-      opacity: 0,
-      y: 100,
-      stagger: 0.25,
-    });
+		gsap.from(descriptionRef.current.children, {
+			delay: 2,
+			duration: 1,
+			opacity: 0,
+			y: 100,
+			stagger: 0.25,
+		});
 
+		gsap.from(footerRef.current.children, {
+			delay: 3,
+			duration: 1,
+			opacity: 0,
+			y: 100,
+			stagger: 0.25,
+		});
 	}, [titleRef, descriptionRef, footerRef]);
 
 	return (

@@ -69,7 +69,6 @@ export default function Work() {
     
     gsap.from(titleRef.current, {
       duration: 1,
-      delay: 3,
       opacity: 0,
       y: 50,
       ease: "power3.out",
@@ -77,7 +76,7 @@ export default function Work() {
 
     gsap.from(descriptionRef.current, {
       duration: 1,
-      delay: 3,
+      delay: 1,
       opacity: 0,
       y: 50,
       ease: "power3.out",
@@ -85,7 +84,7 @@ export default function Work() {
 
     gsap.from(projectsRef.current, {
       duration: 1,
-      delay: 3,
+      delay: 2,
       opacity: 0,
       y: 50,
       stagger: 0.2,
@@ -106,20 +105,20 @@ export default function Work() {
     if (!projects) return;
 
     gsap.from(projectsRef.current.children, {
-      delay: 3,
+      delay: 2,
       x: -100,
       duration: 1,
       ease: "power3.out",
       opacity: 0,
       y: 50,
       stagger: 0.2,
-      scrollTrigger: {
-        trigger: projectsRef.current.children,
-        // start: "bottom 95%",
-        // end: "center top",
-        // markers: true,
-        scrub: 1,
-      },
+      // scrollTrigger: {
+      //   trigger: projectsRef.current.children,
+      //   // start: "bottom 95%",
+      //   // end: "center top",
+      //   // markers: true,
+      //   scrub: 1,
+      // },
     });
 
   }, [projects]);

@@ -1,15 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import "../Css/Navbar.css";
 import NavigationPanel from "./NavigationPanel";
-import { gsap, TweenLite } from "gsap";
+import { gsap } from "gsap";
 
 export default function Navbar() {
 	const [openNavPanel, setOpenNavPanel] = useState(false);
-	const [styleAnimation, setStyleAnimation] = useState("");
 	const circularTextContainer = useRef(null);
 	const circularTextTimeline = useRef(null);
 	const navPannelRef = useRef(null);
-	const [isCircularTextHovered, setIsCircularTextHovered] = useState(false);
 
 	const circularText = " Pratham's Portfolio Pratham's Portfolio ";
 	let circularTextLetters = [];
@@ -24,19 +22,11 @@ export default function Navbar() {
 
 	const handleClick = () => {
 		if (!openNavPanel) {
-			setStyleAnimation("nav-page-animate-entry 0.25s ease-in forwards");
 			setOpenNavPanel(true);
 		} else {
-			setStyleAnimation("nav-page-animate-end 0.25s ease-out forwards");
-			setTimeout(() => {
-				setOpenNavPanel(false);
-			}, 500);
+			setOpenNavPanel(false);
 		}
 	};
-
-	useEffect(() => {
-		document.body.style.overflowY = openNavPanel ? "hidden" : "scroll";
-	}, [openNavPanel]);
 
 	useEffect(() => {
 		if (!circularTextContainer.current) return;
@@ -61,14 +51,14 @@ export default function Navbar() {
 		gsap.from(navPannelRef.current, {
 			delay: 2.5,
 			opacity: 0,
-      y: -100,
+			y: -100,
 			duration: 1,
 			ease: "power4.out",
 		});
 	}, [navPannelRef]);
 	return (
 		<>
-			{openNavPanel && <NavigationPanel style={styleAnimation} />}
+			<NavigationPanel openNavPanel={openNavPanel} />
 			<nav id="Nav" ref={navPannelRef}>
 				<a className="user-skills" href="/">
 					<ol>
