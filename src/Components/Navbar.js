@@ -39,31 +39,19 @@ export default function Navbar() {
 			ease: "linear",
 			repeat: -1,
 		});
+	}, [circularTextContainer]);
+
+	useEffect(() => {
+		if (!circularTextContainer.current) return;
 
 		ScrollTrigger.addEventListener("scrollEnd", () => {
-			circularTextTimeline.current.duration(1).resume();
-			gsap.fromTo(circularTextContainer.current, {
-				backgroundColor: "blue",
-				duration: 2,
-			},{
-				backgroundColor: "transparent",
-				duration: 2,
-			});
+			handleCircularTextHover(true);
 		});
 
 		return () => {
-			ScrollTrigger.removeEventListener("scrollEnd", () => {
-				circularTextTimeline.current.duration(1).resume();
-			});
+			ScrollTrigger.removeEventListener("scrollEnd", () => {});
 		};
-
-		
 	}, [circularTextContainer]);
-	
-	useEffect(() => {
-		
-	}, []);
-
 
 	const handleCircularTextHover = (enter) => {
 		if (enter) {
@@ -83,36 +71,6 @@ export default function Navbar() {
 			ease: "power4.out",
 		});
 	}, [navPannelRef]);
-
-	const handleScroll = () => {
-		console.log('jendjnd');
-		// Get the current scroll position
-		const scrollY = window.scrollY;
-		// Calculate the height of the page content
-		const pageHeight =
-			document.documentElement.scrollHeight - window.innerHeight;
-
-		// Check if we are at the end of the page
-		if (scrollY >= pageHeight) {
-			// Highlight the menu div or take any other action you want
-			navPannelRef.current.style.backgroundColor = "yellow";
-		} else {
-			// Reset the highlight
-			navPannelRef.current.style.backgroundColor = "";
-		}
-	};
-
-	useEffect(() => {
-		if (!circularTextContainer.current) return;
-
-		// Add scroll event listener when the component mounts
-		window.addEventListener("scroll", handleScroll);
-
-		// Cleanup the event listener when the component unmounts
-		return () => {
-			window.removeEventListener("scroll", handleScroll);
-		};
-	}, [circularTextContainer]);
 
 	return (
 		<>
