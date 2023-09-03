@@ -1,0 +1,17 @@
+{
+    "name": "Pratham Chudasama",
+    "short_name": "Pratham",
+    "description": "Welcome to my personal website! I'm Pratham, a passionate web developer dedicated to delivering top-notch websites and web applications. Explore my portfolio and discover my work in front-end and back-end development, responsive design, and more.",
+    "icons": [
+        {
+            "src": "favicon.png",
+            "sizes": "72x72",
+            "type": "image/png"
+        }
+    ],
+    "start_url": "/",
+    "background_color": "#ffffff",
+    "theme_color": "#007bff",
+    "display": "standalone",
+    "orientation": "portrait-primary"
+}
