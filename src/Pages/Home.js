@@ -119,10 +119,8 @@ export default function Home() {
             });
 
             gsap.fromTo(".hero-middle", {
-                scale: 1,
                 objectPosition: "0% 70%"
             }, {
-                scale: 1.1,
                 objectPosition: "70%",
                 duration: 1,
                 ease: "linear",
