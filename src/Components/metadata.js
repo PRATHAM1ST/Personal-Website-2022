@@ -60,6 +60,7 @@ export default function Metadata({
 
 			// google
 			createMetaTag("google-site-verification", "253sXFl_IBcYz7SnU9bPOMsiYz9cIZjk0AnTsC1CjiU"),
+            createMetaTag("googlebot", "index, follow"),
 
 			// robots
 			createMetaTag("robots", "index, follow"),
