@@ -45,7 +45,7 @@ export default function Metadata({
 			createMetaTag("twitter:image:height", "1080"),
 
 			// favicon
-			createMetaTag("icon", "https://firebasestorage.googleapis.com/v0/b/personal-website-adcb1.appspot.com/o/Images%2Ffavicon.png?alt=media&token=8a6c5e1b-7f2f-4d4f-9d0b-1f9c5f9a8c2a"),
+			createMetaTag("icon", "https://firebasestorage.googleapis.com/v0/b/personal-website-adcb1.appspot.com/o/Images%2Fpratham-chudasama-co.png?alt=media&token=bd85143b-de76-4a69-b64d-669efe8541e0"),
 
 			// mobile
 			createMetaTag("mobile-web-app-capable", "yes"),
