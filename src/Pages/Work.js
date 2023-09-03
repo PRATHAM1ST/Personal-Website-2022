@@ -114,18 +114,29 @@ export default function Work() {
                     {project.title}
                     <Link alt="project link"/>
                   </a>
-                  <a
-                    href={project.github}
-                    className="project-tecs"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {project.tecs.map(
-                      (tec, index) =>
-                        tec + (index !== project.tecs.length - 1 ? " · " : "")
-                    )}
-                    {project.github ? <Github alt="github"/> : ""}
-                  </a>
+                  {
+                    project.github ? (
+                      <a
+                        href={project.github}
+                        className="project-tecs"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {project.tecs.map(
+                          (tec, index) =>
+                            tec + (index !== project.tecs.length - 1 ? " · " : "")
+                        )}
+                        <Github alt="github"/>
+                      </a>
+                    ) : (
+                      <div className="project-tecs">
+                        {project.tecs.map(
+                          (tec, index) =>
+                            tec + (index !== project.tecs.length - 1 ? " · " : "")
+                        )}
+                      </div>
+                    )
+                  }
                   <img
                     loading="lazy"
                     title={project.title}
