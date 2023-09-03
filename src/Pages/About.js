@@ -6,11 +6,8 @@ import { ReactComponent as Link } from "../Assets/SVG/link.svg";
 
 import { useAboutMedia } from "../Database/Database";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import FooterNav from "../Components/FooterNav";
 import Metadata from "../Components/metadata.js";
-
-gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
 	const image = useAboutMedia();
@@ -42,13 +39,6 @@ export default function About() {
 			opacity: 0,
 			y: 100,
 			stagger: 0.25,
-			// scrollTrigger: {
-			// 	trigger: descriptionRef.current.children,
-			// 	start: "top center",
-			// 	end: "bottom center",
-			// 	markers: true,
-			// 	// toggleActions: "play pause pause revese",
-			// }
 		});
 		
 	}, [titleRef, descriptionRef]);
@@ -125,7 +115,6 @@ export default function About() {
 						style={{ opacity: isImageLoaded ? 1 : 0 }}
 					/>
 				) : (
-					// <div className="about-image loading" />
 					<></>
 				)}
 			</div>

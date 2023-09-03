@@ -178,17 +178,3 @@ export default function Admin() {
     </>
   );
 }
-
-{
-  /* <form className="admin-login" onSubmit={handleLoginSubmit}>
-            <div className="inputfield">
-              <label htmlFor="username">Username</label>
-              <input id="username" name="username" type="email" required />
-            </div>
-            <div className="inputfield">
-              <label htmlFor="username">Password</label>
-              <input id="password" name="password" type="password" required />
-            </div>
-            <button type="submit">Submit</button>
-          </form> */
-}
