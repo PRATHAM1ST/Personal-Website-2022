@@ -108,11 +108,15 @@ export default function Home() {
 
             gsap.fromTo(".hero-start", {
                 translate: "0, 0",
-                objectPosition: "50% 70%"
+                objectPosition: "50% 70%",
             }, {
                 translate: "0, 5%",
                 objectPosition: "50% 100%",
-            }).repeat(-1).yoyo(true).duration(10).ease("linear");
+                duration: 10,
+                ease: "linear",
+                yoyo: true,
+                repeat: -1,
+            });
 
             gsap.fromTo(".hero-middle", {
                 scale: 1,
@@ -120,7 +124,11 @@ export default function Home() {
             }, {
                 scale: 1.1,
                 objectPosition: "70%",
-            }).repeat(-1).yoyo(true).duration(1).ease("linear");
+                duration: 1,
+                ease: "linear",
+                yoyo: true,
+                repeat: -1,
+            });
 
             gsap.fromTo(".hero-end", {
                 translate: "0, 0",
@@ -128,7 +136,11 @@ export default function Home() {
             }, {
                 translate: "-2.5%, 0%",
                 objectPosition: "50% 80%",
-            }).repeat(-1).yoyo(true).duration(10).ease("linear");
+                duration: 10,
+                ease: "linear",
+                yoyo: true,
+                repeat: -1,
+            });
         });
     }, [dataLoaded]);
 
