@@ -10,7 +10,7 @@ import "../Css/Contact.css";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import FooterNav from "../Components/FooterNav";
-import Metadata from "../Components/Metadata";
+import Metadata from "../Components/metadata.js";
 
 export default function Contact() {
 

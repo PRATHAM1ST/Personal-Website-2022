@@ -5,7 +5,7 @@ import "../Css/Home.css";
 import { useHomeMedia } from "../Database/Database";
 import { gsap } from "gsap";
 import FooterNav from "../Components/FooterNav";
-import Metadata from "../Components/Metadata";
+import Metadata from "../Components/metadata.js";
 
 export default function Home() {
     const videoRef = useRef();

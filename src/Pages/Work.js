@@ -10,7 +10,7 @@ import { getWork } from "../Database/Firebase";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import FooterNav from "../Components/FooterNav";
-import Metadata from "../Components/Metadata";
+import Metadata from "../Components/metadata.js";
 
 gsap.registerPlugin(ScrollTrigger);
 
