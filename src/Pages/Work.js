@@ -10,6 +10,7 @@ import { getWork } from "../Database/Firebase";
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import FooterNav from "../Components/FooterNav";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -60,7 +61,6 @@ export default function Work() {
   const titleRef = useRef(null);
   const descriptionRef = useRef(null);
   const projectsRef = useRef(null);
-	const footerRef = useRef(null);
 
   useEffect(() => {
     if (!titleRef.current) return;
@@ -91,15 +91,7 @@ export default function Work() {
       ease: "power3.out",
     });
 
-    gsap.from(footerRef.current.children, {
-      delay: 3,
-      duration: 1,
-      opacity: 0,
-      y: 100,
-      stagger: 0.25,
-    });
-
-  }, [titleRef, descriptionRef, projectsRef, footerRef]);
+  }, [titleRef, descriptionRef, projectsRef]);
   
   useEffect(() => {
     if (!projects) return;
@@ -184,10 +176,7 @@ export default function Work() {
             </>
           )}
         </div>
-        <a className="specific-page-link" href="/about" ref={footerRef}>
-          <span>about</span>
-          <Arrow alt="arrow"/>
-        </a>
+        <FooterNav title={"About"} link={"/about"} />
       </div>
     </>
   );

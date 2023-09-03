@@ -8,6 +8,7 @@ import { ReactComponent as Arrow } from "../Assets/SVG/arrow.svg";
 import { useAboutMedia } from "../Database/Database";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import FooterNav from "../Components/FooterNav";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -61,7 +62,6 @@ export default function About() {
 	const descriptionRef = useRef(null);
 	const imageRef = useRef(null);
 	const [isImageLoaded, setIsImageLoaded] = useState(false);
-	const footerRef = useRef(null);
 
 	useEffect(() => {
 		if (!titleRef.current) return;
@@ -87,16 +87,8 @@ export default function About() {
 			// 	// toggleActions: "play pause pause revese",
 			// }
 		});
-
-		gsap.from(footerRef.current.children, {
-			delay: 3,
-			duration: 1,
-			opacity: 0,
-			y: 100,
-			stagger: 0.25,
-		});
 		
-	}, [titleRef, descriptionRef, footerRef]);
+	}, [titleRef, descriptionRef]);
 	
 	useEffect(() => {
 		if (!imageRef.current) return;
@@ -193,10 +185,7 @@ export default function About() {
 						<Link />
 					</a>
 				</div>
-				<a className="specific-page-link" href="/contact" ref={footerRef}>
-					<span>contact</span>
-					<Arrow alt="arrow" />
-				</a>
+				<FooterNav title={"Contact"} link={"/contact"} />
 			</div>
 		</>
 	);

@@ -10,6 +10,7 @@ import { ReactComponent as Email } from "../Assets/SVG/email.svg";
 import "../Css/Contact.css";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import FooterNav from "../Components/FooterNav";
 
 export default function Contact() {
 	document.body.style.overflow = "hidden";
@@ -62,10 +63,9 @@ export default function Contact() {
 
 	const titleRef = useRef(null);
 	const descriptionRef = useRef(null);
-	const footerRef = useRef(null);
 
 	useEffect(() => {
-		if (!titleRef.current || !descriptionRef.current || !footerRef.current)
+		if (!titleRef.current || !descriptionRef.current )
 			return;
 
 		gsap.from(titleRef.current, {
@@ -82,14 +82,7 @@ export default function Contact() {
 			stagger: 0.25,
 		});
 
-		gsap.from(footerRef.current.children, {
-			delay: 3,
-			duration: 1,
-			opacity: 0,
-			y: 100,
-			stagger: 0.25,
-		});
-	}, [titleRef, descriptionRef, footerRef]);
+	}, [titleRef, descriptionRef]);
 
 	return (
 		<>
@@ -171,10 +164,7 @@ export default function Contact() {
 						</a>
 					</div>
 				</div>
-				<a className="specific-page-link" href="/" ref={footerRef}>
-					<span>Home</span>
-					<Arrow alt="arrow" />
-				</a>
+				<FooterNav title={"Home"} link={"/"} />
 			</div>
 		</>
 	);

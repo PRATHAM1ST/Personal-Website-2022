@@ -5,6 +5,7 @@ import "../Css/Home.css";
 import { ReactComponent as Arrow } from "../Assets/SVG/arrow.svg";
 import { useHomeMedia } from "../Database/Database";
 import { gsap } from "gsap";
+import FooterNav from "../Components/FooterNav";
 
 export default function Home() {
 	const videoRef = useRef();
@@ -74,7 +75,6 @@ export default function Home() {
 	const titleNameRef = useRef();
 	const descriptionRef = useRef();
 	const assetsRef = useRef();
-	const footerRef = useRef();
 
 	useEffect(() => {
 		if (!titleNameRef) return;
@@ -125,14 +125,6 @@ export default function Home() {
 				opacity: 1,
 			})
 		);
-
-		gsap.from(footerRef.current.children, {
-			delay: 3,
-			duration: 1,
-			opacity: 0,
-			y: 100,
-			stagger: 0.25,
-		});
 	}, [titleNameRef]);
 
 	useEffect(() => {
@@ -245,10 +237,7 @@ export default function Home() {
 						<></>
 					)}
 				</div>
-				<a className="specific-page-link" href="/work" ref={footerRef}>
-					<span>work</span>
-					<Arrow />
-				</a>
+				<FooterNav title={"Work"} link={"/work"} />
 			</div>
 		</>
 	);

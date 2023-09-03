@@ -56,6 +56,37 @@ export default function Navbar() {
 			ease: "power4.out",
 		});
 	}, [navPannelRef]);
+
+	const handleScroll = () => {
+		console.log('jendjnd');
+		// Get the current scroll position
+		const scrollY = window.scrollY;
+		// Calculate the height of the page content
+		const pageHeight =
+			document.documentElement.scrollHeight - window.innerHeight;
+
+		// Check if we are at the end of the page
+		if (scrollY >= pageHeight) {
+			// Highlight the menu div or take any other action you want
+			navPannelRef.current.style.backgroundColor = "yellow";
+		} else {
+			// Reset the highlight
+			navPannelRef.current.style.backgroundColor = "";
+		}
+	};
+
+	useEffect(() => {
+		if (!circularTextContainer.current) return;
+
+		// Add scroll event listener when the component mounts
+		window.addEventListener("scroll", handleScroll);
+
+		// Cleanup the event listener when the component unmounts
+		return () => {
+			window.removeEventListener("scroll", handleScroll);
+		};
+	}, [circularTextContainer]);
+
 	return (
 		<>
 			<NavigationPanel openNavPanel={openNavPanel} />
