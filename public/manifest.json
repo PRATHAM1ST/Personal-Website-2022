@@ -1,17 +1,57 @@
 {
-    "name": "Pratham Chudasama",
-    "short_name": "Pratham",
-    "description": "Welcome to my personal website! I'm Pratham, a passionate web developer dedicated to delivering top-notch websites and web applications. Explore my portfolio and discover my work in front-end and back-end development, responsive design, and more.",
-    "icons": [
-        {
-            "src": "favicon.png",
-            "sizes": "72x72",
-            "type": "image/png"
-        }
-    ],
-    "start_url": "/",
-    "background_color": "#e2e2e5",
-    "theme_color": "#1b1b1b",
-    "display": "standalone",
-    "orientation": "portrait-primary"
+	"name": "Pratham Chudasama",
+	"short_name": "Pratham",
+	"description": "Welcome to my personal website! I'm Pratham, a passionate web developer dedicated to delivering top-notch websites and web applications. Explore my portfolio and discover my work in front-end and back-end development, responsive design, and more.",
+	"icons": [
+		{
+			"src": "favicon.png",
+			"sizes": "72x72",
+			"type": "image/png"
+		},
+		{
+			"src": "favicon.ico",
+			"sizes": "72x72",
+			"type": "image/ico"
+		},
+		{
+			"src": "favicon-16.ico",
+			"sizes": "16x16",
+			"type": "image/ico"
+		},
+		{
+			"src": "favicon-32.ico",
+			"sizes": "32x32",
+			"type": "image/ico"
+		},
+		{
+			"src": "favicon-48.ico",
+			"sizes": "48x48",
+			"type": "image/ico"
+		},
+		{
+			"src": "favicon-128.ico",
+			"sizes": "128x128",
+			"type": "image/ico"
+		},
+		{
+			"src": "icon.png",
+			"sizes": "72x72",
+			"type": "image/png"
+		},
+		{
+			"src": "apple-touch-icon.png",
+			"sizes": "72x72",
+			"type": "image/png"
+		},
+		{
+			"src": "apple-touch-icon-precomposed.png",
+			"sizes": "72x72",
+			"type": "image/png"
+		}
+	],
+	"start_url": "/",
+	"background_color": "#e2e2e5",
+	"theme_color": "#1b1b1b",
+	"display": "standalone",
+	"orientation": "portrait-primary"
 }
