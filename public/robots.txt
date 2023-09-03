@@ -1,6 +1,7 @@
-# https://www.robotstxt.org/robotstxt.html
+User-agent: Googlebot
+Disallow: /admin
+
 User-agent: *
-allow: /
-allow: /contact
-allow: /about
-allow: /work
+Disallow: /admin
+
+Sitemap: https://pratham-chudasama.co/sitemap.xml
