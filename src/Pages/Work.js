@@ -4,55 +4,26 @@ import "../Css/Work.css";
 
 import { ReactComponent as Link } from "../Assets/SVG/link.svg";
 import { ReactComponent as Github } from "../Assets/SVG/github.svg";
-import { ReactComponent as Arrow } from "../Assets/SVG/arrow.svg";
 
 import { getWork } from "../Database/Firebase";
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import FooterNav from "../Components/FooterNav";
+import Metadata from "../Components/Metadata";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Work() {
   const [projects, setProjects] = useState(null);
 
+  Metadata({
+    title: "W O R K - Web Developer | Showcasing My Work",
+    description: "View examples of my effortful and exciting works online. Learn about the tecs used and check out my GitHub repositories.",
+    keywords: "web development, projects, examples, tecs, GitHub, portfolio",
+  });
+
   useEffect(() => {
-    document.title = "W O R K - Web Developer | Showcasing My Work";
-    const metaDescription = document.createElement("meta");
-    metaDescription.setAttribute("name", "description");
-    metaDescription.setAttribute("content", "View examples of my effortful and exciting works online. Learn about the tecs used and check out my GitHub repositories.");
-    document.head.appendChild(metaDescription);
-
-    const metaKeywords = document.createElement("meta");
-    metaKeywords.setAttribute("name", "keywords");
-    metaKeywords.setAttribute("content", "web development, projects, examples, tecs, GitHub, portfolio");
-    document.head.appendChild(metaKeywords);
-
-    const metaAuthor = document.createElement("meta");
-    metaAuthor.setAttribute("name", "author");
-    metaAuthor.setAttribute("content", "Pratham Chudasama");
-    document.head.appendChild(metaAuthor);
-
-    const ogTitle = document.createElement("meta");
-    ogTitle.setAttribute("property", "og:title");
-    ogTitle.setAttribute("content", "C O N T A C T");
-    document.head.appendChild(ogTitle);
-
-    const ogUrl = document.createElement("meta");
-    ogUrl.setAttribute("property", "og:url");
-    ogUrl.setAttribute("content", "https://www.pratham-chudasama.co/");
-    document.head.appendChild(ogUrl);
-
-    const ogImage = document.createElement("meta");
-    ogImage.setAttribute("property", "og:image");
-    ogImage.setAttribute("content", "https://www.pratham-chudasama.co/favicon.png");
-    document.head.appendChild(ogImage);
-
-    const ogDescription = document.createElement("meta");
-    ogDescription.setAttribute("property", "og:description");
-    ogDescription.setAttribute("content", "View examples of my effortful and exciting works online. Learn about the tecs used and check out my GitHub repositories.");
-    document.head.appendChild(ogDescription);
     (async () => {
       setProjects(await getWork());
     })();

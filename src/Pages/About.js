@@ -3,60 +3,23 @@ import { useEffect, useRef, useState } from "react";
 import "../Css/About.css";
 
 import { ReactComponent as Link } from "../Assets/SVG/link.svg";
-import { ReactComponent as Arrow } from "../Assets/SVG/arrow.svg";
 
 import { useAboutMedia } from "../Database/Database";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import FooterNav from "../Components/FooterNav";
+import Metadata from "../Components/Metadata";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
 	const image = useAboutMedia();
 
-	useEffect(() => {
-		document.title = "A B O U T - Web Developer | Showcasing My Work";
-
-		const metaDescription = document.createElement("meta");
-		metaDescription.setAttribute("name", "description");
-		metaDescription.setAttribute(
-			"content",
-			"Meet PRATHAM, a talented web developer and student studying ICT at LJIET. Learn about his passion for programming, his skills in HTML, CSS, JavaScript, React, Firebase, Node.js, and more, and how he's looking for an internship to gain experience. View his resume and contact him to work together on your next project."
-		);
-		document.head.appendChild(metaDescription);
-
-		const metaKeywords = document.createElement("meta");
-		metaKeywords.setAttribute("name", "keywords");
-		metaKeywords.setAttribute(
-			"content",
-			"web development, programming, personal website"
-		);
-		document.head.appendChild(metaKeywords);
-
-		const metaAuthor = document.createElement("meta");
-		metaAuthor.setAttribute("name", "author");
-		metaAuthor.setAttribute("content", "Pratham Chudasama");
-		document.head.appendChild(metaAuthor);
-
-		const ogTitle = document.createElement("meta");
-		ogTitle.setAttribute("property", "og:title");
-		ogTitle.setAttribute("content", "A B O U T");
-		document.head.appendChild(ogTitle);
-
-		const ogUrl = document.createElement("meta");
-		ogUrl.setAttribute("property", "og:url");
-		ogUrl.setAttribute("content", "https://www.pratham-chudasama.co/");
-		document.head.appendChild(ogUrl);
-
-		const ogDescription = document.createElement("meta");
-		ogDescription.setAttribute("property", "og:description");
-		ogDescription.setAttribute(
-			"content",
-			"Meet PRATHAM, a talented web developer and student studying ICT at LJIET. Learn about his passion for programming, his skills in HTML, CSS, JavaScript, React, Firebase, Node.js, and more, and how he's looking for an internship to gain experience. View his resume and contact him to work together on your next project."
-		);
-		document.head.appendChild(ogDescription);
-	}, []);
+	Metadata({
+		title: "A B O U T - Web Developer | Showcasing My Work",
+		description: "Meet PRATHAM, a talented web developer and student studying ICT at LJIET. Learn about his passion for programming, his skills in HTML, CSS, JavaScript, React, Firebase, Node.js, and more, and how he's looking for an internship to gain experience. View his resume and contact him to work together on your next project.",
+		keywords: "web development, programming, personal website",
+	});
 
 	const titleRef = useRef(null);
 	const descriptionRef = useRef(null);
