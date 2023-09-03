@@ -11,7 +11,7 @@ import Height from "../Components/Height";
 import Image from "../Components/Image";
 import Video from "../Components/Video";
 
-import { checkAdmin, signin } from "../Database/Firebase";
+import { signin } from "../Database/Firebase";
 import { useAboutMedia, useHomeMedia } from "../Database/Database";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
@@ -29,8 +29,6 @@ export default function Admin() {
       }
     });
   }, []);
-
-  console.log(adminLogin);
 
   const handleLoginSubmit = (e) => {
     e.preventDefault();

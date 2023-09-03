@@ -132,15 +132,6 @@ export default function Home() {
         });
     }, [dataLoaded]);
 
-    const handleScroll = () => {
-        console.log('scrolling');
-    };
-
-    useEffect(() => {
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
-
     return (
         <>
             <div id="Home">

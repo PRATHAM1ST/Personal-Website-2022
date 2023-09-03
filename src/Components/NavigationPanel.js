@@ -56,7 +56,6 @@ export default function NavigationPanel({ openNavPanel }) {
 									href="/"
 									key={page}
 									className="pageLink"
-									onClick={() => console.log(1)}
 								>
 									home
 								</a>
