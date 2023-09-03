@@ -2,6 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import "../Css/Navbar.css";
 import NavigationPanel from "./NavigationPanel";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Navbar() {
 	const [openNavPanel, setOpenNavPanel] = useState(false);
@@ -36,7 +39,31 @@ export default function Navbar() {
 			ease: "linear",
 			repeat: -1,
 		});
+
+		ScrollTrigger.addEventListener("scrollEnd", () => {
+			circularTextTimeline.current.duration(1).resume();
+			gsap.fromTo(circularTextContainer.current, {
+				backgroundColor: "blue",
+				duration: 2,
+			},{
+				backgroundColor: "transparent",
+				duration: 2,
+			});
+		});
+
+		return () => {
+			ScrollTrigger.removeEventListener("scrollEnd", () => {
+				circularTextTimeline.current.duration(1).resume();
+			});
+		};
+
+		
 	}, [circularTextContainer]);
+	
+	useEffect(() => {
+		
+	}, []);
+
 
 	const handleCircularTextHover = (enter) => {
 		if (enter) {
