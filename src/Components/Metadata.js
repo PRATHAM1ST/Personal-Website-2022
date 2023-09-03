@@ -14,6 +14,12 @@ export default function Metadata({
 	};
 
 	useEffect(() => {
+
+		// remove all meta tags
+		document.querySelectorAll("meta").forEach((metaTag) => {
+			metaTag.remove();
+		});
+
 		document.title = title;
 
 		const metaTags = [
