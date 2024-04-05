@@ -4,6 +4,7 @@ import { ReactComponent as LinkedIn } from "../Assets/SVG/linkedin.svg";
 import { ReactComponent as Instagram } from "../Assets/SVG/instagram.svg";
 import { ReactComponent as Twitter } from "../Assets/SVG/twitter.svg";
 import { ReactComponent as Hackster } from "../Assets/SVG/hackster.svg";
+import { ReactComponent as StackOverflow } from "../Assets/SVG/stackoverflow.svg";
 import { ReactComponent as Email } from "../Assets/SVG/email.svg";
 
 import "../Css/Contact.css";
@@ -109,6 +110,15 @@ export default function Contact() {
 						>
 							Hackster
 							<Hackster alt="hackster" />
+						</a>
+						<a
+							id="stackoverflow"
+							href={process.env.REACT_APP_STACKOVERFLOW_URL}
+							target="_blank"
+							rel="noreferrer"
+						>
+							Stackoverflow
+							<StackOverflow alt="stackoverflow" />
 						</a>
 					</div>
 					<div className="resume-link">
