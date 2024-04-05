@@ -4,4 +4,4 @@ Disallow: /admin
 User-agent: *
 Disallow: /admin
 
-Sitemap: https://pratham-chudasama.co/sitemap.xml
+Sitemap: https://prathamchudasama.com/sitemap.xml
