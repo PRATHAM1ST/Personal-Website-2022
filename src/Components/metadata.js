@@ -29,6 +29,7 @@ export default function Metadata({
 
 			// og tags
 			createMetaTag("og:title", title),
+			createMetaTag("og:site_name", title),
 			createMetaTag("og:url", window.location.href),
 			createMetaTag("og:description", description),
 			createMetaTag("og:type", "personal website"),
